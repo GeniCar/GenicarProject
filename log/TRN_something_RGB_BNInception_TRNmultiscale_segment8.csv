@@ -1,0 +1,480 @@
+Epoch: [0][0/8], lr: 0.00100	Time 8.265 (8.265)	Data 3.026 (3.026)	Loss 1.2018 (1.2018)	Prec@1 37.500 (37.500)
+Test: [0/4]	Time 3.503 (3.503)	Loss 2.6553 (2.6553)	Prec@1 37.500 (37.500)
+Testing Results: Prec@1 42.308 Loss 2.01028 
+Best Prec@1: 0.000
+Epoch: [1][0/8], lr: 0.00100	Time 3.707 (3.707)	Data 3.239 (3.239)	Loss 2.2022 (2.2022)	Prec@1 37.500 (37.500)
+Test: [0/4]	Time 3.687 (3.687)	Loss 1.7923 (1.7923)	Prec@1 37.500 (37.500)
+Testing Results: Prec@1 46.154 Loss 1.61128 
+Best Prec@1: 42.308
+Epoch: [2][0/8], lr: 0.00100	Time 3.530 (3.530)	Data 3.103 (3.103)	Loss 1.2505 (1.2505)	Prec@1 50.000 (50.000)
+Test: [0/4]	Time 3.584 (3.584)	Loss 1.4582 (1.4582)	Prec@1 37.500 (37.500)
+Testing Results: Prec@1 53.846 Loss 1.25774 
+Best Prec@1: 46.154
+Epoch: [3][0/8], lr: 0.00100	Time 3.443 (3.443)	Data 2.918 (2.918)	Loss 0.8229 (0.8229)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.599 (3.599)	Loss 1.4277 (1.4277)	Prec@1 37.500 (37.500)
+Testing Results: Prec@1 42.308 Loss 1.22242 
+Best Prec@1: 53.846
+Epoch: [4][0/8], lr: 0.00100	Time 3.561 (3.561)	Data 3.083 (3.083)	Loss 0.7834 (0.7834)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.599 (3.599)	Loss 1.5678 (1.5678)	Prec@1 37.500 (37.500)
+Testing Results: Prec@1 42.308 Loss 1.43151 
+Best Prec@1: 53.846
+Epoch: [5][0/8], lr: 0.00100	Time 3.461 (3.461)	Data 3.079 (3.079)	Loss 0.5964 (0.5964)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.694 (3.694)	Loss 1.3863 (1.3863)	Prec@1 37.500 (37.500)
+Testing Results: Prec@1 53.846 Loss 1.02479 
+Best Prec@1: 53.846
+Epoch: [6][0/8], lr: 0.00100	Time 3.772 (3.772)	Data 3.393 (3.393)	Loss 0.2220 (0.2220)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.617 (3.617)	Loss 1.1366 (1.1366)	Prec@1 62.500 (62.500)
+Testing Results: Prec@1 73.077 Loss 0.89032 
+Best Prec@1: 53.846
+Epoch: [7][0/8], lr: 0.00100	Time 3.507 (3.507)	Data 3.067 (3.067)	Loss 0.7059 (0.7059)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.576 (3.576)	Loss 0.6163 (0.6163)	Prec@1 75.000 (75.000)
+Testing Results: Prec@1 88.462 Loss 0.40768 
+Best Prec@1: 73.077
+Epoch: [8][0/8], lr: 0.00100	Time 3.647 (3.647)	Data 3.268 (3.268)	Loss 0.3128 (0.3128)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.745 (3.745)	Loss 0.5016 (0.5016)	Prec@1 75.000 (75.000)
+Testing Results: Prec@1 88.462 Loss 0.32614 
+Best Prec@1: 88.462
+Epoch: [9][0/8], lr: 0.00100	Time 3.364 (3.364)	Data 2.945 (2.945)	Loss 0.5724 (0.5724)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.615 (3.615)	Loss 0.5332 (0.5332)	Prec@1 62.500 (62.500)
+Testing Results: Prec@1 84.615 Loss 0.35912 
+Best Prec@1: 88.462
+Epoch: [10][0/8], lr: 0.00100	Time 3.734 (3.734)	Data 3.235 (3.235)	Loss 0.3594 (0.3594)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.582 (3.582)	Loss 0.8135 (0.8135)	Prec@1 62.500 (62.500)
+Testing Results: Prec@1 61.538 Loss 0.89228 
+Best Prec@1: 88.462
+Epoch: [11][0/8], lr: 0.00100	Time 3.341 (3.341)	Data 2.977 (2.977)	Loss 0.9474 (0.9474)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.570 (3.570)	Loss 0.9256 (0.9256)	Prec@1 62.500 (62.500)
+Testing Results: Prec@1 69.231 Loss 0.73416 
+Best Prec@1: 88.462
+Epoch: [12][0/8], lr: 0.00100	Time 3.813 (3.813)	Data 3.334 (3.334)	Loss 0.7813 (0.7813)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.574 (3.574)	Loss 0.9839 (0.9839)	Prec@1 62.500 (62.500)
+Testing Results: Prec@1 57.692 Loss 0.84921 
+Best Prec@1: 88.462
+Epoch: [13][0/8], lr: 0.00100	Time 3.729 (3.729)	Data 3.192 (3.192)	Loss 0.9892 (0.9892)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.590 (3.590)	Loss 0.8274 (0.8274)	Prec@1 62.500 (62.500)
+Testing Results: Prec@1 69.231 Loss 0.82129 
+Best Prec@1: 88.462
+Epoch: [14][0/8], lr: 0.00100	Time 3.458 (3.458)	Data 2.979 (2.979)	Loss 0.1800 (0.1800)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.714 (3.714)	Loss 0.6700 (0.6700)	Prec@1 75.000 (75.000)
+Testing Results: Prec@1 73.077 Loss 0.60086 
+Best Prec@1: 88.462
+Epoch: [15][0/8], lr: 0.00100	Time 3.387 (3.387)	Data 2.971 (2.971)	Loss 1.0605 (1.0605)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.595 (3.595)	Loss 0.3206 (0.3206)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 80.769 Loss 0.48030 
+Best Prec@1: 88.462
+Epoch: [16][0/8], lr: 0.00100	Time 3.355 (3.355)	Data 2.955 (2.955)	Loss 0.2343 (0.2343)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.506 (3.506)	Loss 0.3228 (0.3228)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 80.769 Loss 0.43623 
+Best Prec@1: 88.462
+Epoch: [17][0/8], lr: 0.00100	Time 3.663 (3.663)	Data 3.181 (3.181)	Loss 0.7479 (0.7479)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.555 (3.555)	Loss 0.3310 (0.3310)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 92.308 Loss 0.35880 
+Best Prec@1: 88.462
+Epoch: [18][0/8], lr: 0.00100	Time 3.601 (3.601)	Data 3.163 (3.163)	Loss 0.6944 (0.6944)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.599 (3.599)	Loss 0.2406 (0.2406)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 76.923 Loss 0.42021 
+Best Prec@1: 92.308
+Epoch: [19][0/8], lr: 0.00100	Time 3.581 (3.581)	Data 3.198 (3.198)	Loss 0.6099 (0.6099)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.481 (3.481)	Loss 0.1790 (0.1790)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 92.308 Loss 0.30447 
+Best Prec@1: 92.308
+Epoch: [20][0/8], lr: 0.00100	Time 3.447 (3.447)	Data 2.953 (2.953)	Loss 0.1719 (0.1719)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.564 (3.564)	Loss 0.1595 (0.1595)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.28767 
+Best Prec@1: 92.308
+Epoch: [21][0/8], lr: 0.00100	Time 3.183 (3.183)	Data 2.774 (2.774)	Loss 0.5083 (0.5083)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.543 (3.543)	Loss 0.1599 (0.1599)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.21413 
+Best Prec@1: 96.154
+Epoch: [22][0/8], lr: 0.00100	Time 3.403 (3.403)	Data 2.951 (2.951)	Loss 0.6859 (0.6859)	Prec@1 50.000 (50.000)
+Test: [0/4]	Time 3.623 (3.623)	Loss 0.1458 (0.1458)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.18856 
+Best Prec@1: 96.154
+Epoch: [23][0/8], lr: 0.00100	Time 3.528 (3.528)	Data 3.057 (3.057)	Loss 0.4816 (0.4816)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.525 (3.525)	Loss 0.1650 (0.1650)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 84.615 Loss 0.22750 
+Best Prec@1: 96.154
+Epoch: [24][0/8], lr: 0.00100	Time 3.481 (3.481)	Data 3.009 (3.009)	Loss 0.2681 (0.2681)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.474 (3.474)	Loss 0.2112 (0.2112)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 80.769 Loss 0.30837 
+Best Prec@1: 96.154
+Epoch: [25][0/8], lr: 0.00100	Time 3.255 (3.255)	Data 2.854 (2.854)	Loss 0.1846 (0.1846)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.591 (3.591)	Loss 0.3221 (0.3221)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 76.923 Loss 0.45814 
+Best Prec@1: 96.154
+Epoch: [26][0/8], lr: 0.00100	Time 3.556 (3.556)	Data 3.090 (3.090)	Loss 0.3804 (0.3804)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.592 (3.592)	Loss 0.3394 (0.3394)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 84.615 Loss 0.33956 
+Best Prec@1: 96.154
+Epoch: [27][0/8], lr: 0.00100	Time 3.643 (3.643)	Data 3.218 (3.218)	Loss 0.2338 (0.2338)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.635 (3.635)	Loss 0.3119 (0.3119)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 84.615 Loss 0.30277 
+Best Prec@1: 96.154
+Epoch: [28][0/8], lr: 0.00100	Time 3.340 (3.340)	Data 2.879 (2.879)	Loss 0.0856 (0.0856)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.487 (3.487)	Loss 0.2259 (0.2259)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 88.462 Loss 0.21158 
+Best Prec@1: 96.154
+Epoch: [29][0/8], lr: 0.00100	Time 3.626 (3.626)	Data 3.124 (3.124)	Loss 0.1460 (0.1460)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.590 (3.590)	Loss 0.1810 (0.1810)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 84.615 Loss 0.20530 
+Best Prec@1: 96.154
+Epoch: [30][0/8], lr: 0.00100	Time 3.676 (3.676)	Data 3.335 (3.335)	Loss 0.2589 (0.2589)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.536 (3.536)	Loss 0.0915 (0.0915)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.11799 
+Best Prec@1: 96.154
+Epoch: [31][0/8], lr: 0.00100	Time 3.673 (3.673)	Data 3.286 (3.286)	Loss 0.3245 (0.3245)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.573 (3.573)	Loss 0.0287 (0.0287)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.06312 
+Best Prec@1: 96.154
+Epoch: [32][0/8], lr: 0.00100	Time 3.733 (3.733)	Data 3.181 (3.181)	Loss 0.1925 (0.1925)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.546 (3.546)	Loss 0.0417 (0.0417)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.06561 
+Best Prec@1: 96.154
+Epoch: [33][0/8], lr: 0.00100	Time 3.362 (3.362)	Data 2.927 (2.927)	Loss 0.1610 (0.1610)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.634 (3.634)	Loss 0.3639 (0.3639)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 92.308 Loss 0.16608 
+Best Prec@1: 96.154
+Epoch: [34][0/8], lr: 0.00100	Time 3.403 (3.403)	Data 2.919 (2.919)	Loss 0.1362 (0.1362)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.646 (3.646)	Loss 0.2696 (0.2696)	Prec@1 87.500 (87.500)
+Testing Results: Prec@1 96.154 Loss 0.11414 
+Best Prec@1: 96.154
+Epoch: [35][0/8], lr: 0.00100	Time 3.592 (3.592)	Data 3.066 (3.066)	Loss 0.1923 (0.1923)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.605 (3.605)	Loss 0.0393 (0.0393)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.06153 
+Best Prec@1: 96.154
+Epoch: [36][0/8], lr: 0.00100	Time 3.586 (3.586)	Data 3.089 (3.089)	Loss 0.9259 (0.9259)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.519 (3.519)	Loss 0.0032 (0.0032)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.07225 
+Best Prec@1: 96.154
+Epoch: [37][0/8], lr: 0.00100	Time 3.887 (3.887)	Data 3.500 (3.500)	Loss 1.6789 (1.6789)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.528 (3.528)	Loss 0.0045 (0.0045)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.05056 
+Best Prec@1: 96.154
+Epoch: [38][0/8], lr: 0.00100	Time 3.312 (3.312)	Data 2.911 (2.911)	Loss 0.4442 (0.4442)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.571 (3.571)	Loss 0.0294 (0.0294)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.07214 
+Best Prec@1: 96.154
+Epoch: [39][0/8], lr: 0.00100	Time 3.471 (3.471)	Data 3.043 (3.043)	Loss 0.3177 (0.3177)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.554 (3.554)	Loss 0.0731 (0.0731)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.11894 
+Best Prec@1: 100.000
+Epoch: [40][0/8], lr: 0.00100	Time 3.532 (3.532)	Data 3.086 (3.086)	Loss 0.1758 (0.1758)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.608 (3.608)	Loss 0.0813 (0.0813)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 96.154 Loss 0.13282 
+Best Prec@1: 100.000
+Epoch: [41][0/8], lr: 0.00100	Time 3.171 (3.171)	Data 2.789 (2.789)	Loss 0.1357 (0.1357)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.492 (3.492)	Loss 0.0878 (0.0878)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.12389 
+Best Prec@1: 100.000
+Epoch: [42][0/8], lr: 0.00100	Time 3.395 (3.395)	Data 2.925 (2.925)	Loss 0.3338 (0.3338)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.461 (3.461)	Loss 0.0524 (0.0524)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.08459 
+Best Prec@1: 100.000
+Epoch: [43][0/8], lr: 0.00100	Time 3.373 (3.373)	Data 2.900 (2.900)	Loss 0.1688 (0.1688)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.678 (3.678)	Loss 0.0378 (0.0378)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.05762 
+Best Prec@1: 100.000
+Epoch: [44][0/8], lr: 0.00100	Time 3.788 (3.788)	Data 3.328 (3.328)	Loss 0.0845 (0.0845)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.518 (3.518)	Loss 0.0124 (0.0124)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02942 
+Best Prec@1: 100.000
+Epoch: [45][0/8], lr: 0.00100	Time 3.719 (3.719)	Data 3.233 (3.233)	Loss 0.5135 (0.5135)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.539 (3.539)	Loss 0.0041 (0.0041)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01480 
+Best Prec@1: 100.000
+Epoch: [46][0/8], lr: 0.00100	Time 3.465 (3.465)	Data 3.066 (3.066)	Loss 0.3792 (0.3792)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.571 (3.571)	Loss 0.0073 (0.0073)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00986 
+Best Prec@1: 100.000
+Epoch: [47][0/8], lr: 0.00100	Time 3.768 (3.768)	Data 3.276 (3.276)	Loss 0.3090 (0.3090)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.572 (3.572)	Loss 0.0017 (0.0017)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01392 
+Best Prec@1: 100.000
+Epoch: [48][0/8], lr: 0.00100	Time 3.501 (3.501)	Data 3.040 (3.040)	Loss 0.0261 (0.0261)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.534 (3.534)	Loss 0.0021 (0.0021)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01898 
+Best Prec@1: 100.000
+Epoch: [49][0/8], lr: 0.00100	Time 3.381 (3.381)	Data 2.948 (2.948)	Loss 0.1548 (0.1548)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.568 (3.568)	Loss 0.0035 (0.0035)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01838 
+Best Prec@1: 100.000
+Epoch: [50][0/8], lr: 0.00010	Time 3.838 (3.838)	Data 3.403 (3.403)	Loss 0.4832 (0.4832)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.646 (3.646)	Loss 0.0024 (0.0024)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02224 
+Best Prec@1: 100.000
+Epoch: [51][0/8], lr: 0.00010	Time 3.400 (3.400)	Data 2.932 (2.932)	Loss 0.5927 (0.5927)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.667 (3.667)	Loss 0.0023 (0.0023)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02050 
+Best Prec@1: 100.000
+Epoch: [52][0/8], lr: 0.00010	Time 3.781 (3.781)	Data 3.318 (3.318)	Loss 0.2081 (0.2081)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.567 (3.567)	Loss 0.0033 (0.0033)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01735 
+Best Prec@1: 100.000
+Epoch: [53][0/8], lr: 0.00010	Time 3.334 (3.334)	Data 2.867 (2.867)	Loss 1.2661 (1.2661)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.640 (3.640)	Loss 0.0017 (0.0017)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02189 
+Best Prec@1: 100.000
+Epoch: [54][0/8], lr: 0.00010	Time 3.715 (3.715)	Data 3.251 (3.251)	Loss 0.5316 (0.5316)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.618 (3.618)	Loss 0.0044 (0.0044)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02295 
+Best Prec@1: 100.000
+Epoch: [55][0/8], lr: 0.00010	Time 3.743 (3.743)	Data 3.214 (3.214)	Loss 1.3160 (1.3160)	Prec@1 50.000 (50.000)
+Test: [0/4]	Time 3.629 (3.629)	Loss 0.0026 (0.0026)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02545 
+Best Prec@1: 100.000
+Epoch: [56][0/8], lr: 0.00010	Time 3.520 (3.520)	Data 3.078 (3.078)	Loss 0.3401 (0.3401)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.556 (3.556)	Loss 0.0041 (0.0041)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02424 
+Best Prec@1: 100.000
+Epoch: [57][0/8], lr: 0.00010	Time 3.329 (3.329)	Data 2.902 (2.902)	Loss 0.0361 (0.0361)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.612 (3.612)	Loss 0.0016 (0.0016)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02784 
+Best Prec@1: 100.000
+Epoch: [58][0/8], lr: 0.00010	Time 3.600 (3.600)	Data 3.221 (3.221)	Loss 0.0123 (0.0123)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.537 (3.537)	Loss 0.0021 (0.0021)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02424 
+Best Prec@1: 100.000
+Epoch: [59][0/8], lr: 0.00010	Time 3.424 (3.424)	Data 2.992 (2.992)	Loss 0.0024 (0.0024)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.610 (3.610)	Loss 0.0034 (0.0034)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02772 
+Best Prec@1: 100.000
+Epoch: [60][0/8], lr: 0.00010	Time 3.438 (3.438)	Data 2.971 (2.971)	Loss 0.0927 (0.0927)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.598 (3.598)	Loss 0.0052 (0.0052)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02264 
+Best Prec@1: 100.000
+Epoch: [61][0/8], lr: 0.00010	Time 3.516 (3.516)	Data 3.137 (3.137)	Loss 0.0255 (0.0255)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.478 (3.478)	Loss 0.0028 (0.0028)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02759 
+Best Prec@1: 100.000
+Epoch: [62][0/8], lr: 0.00010	Time 3.449 (3.449)	Data 2.928 (2.928)	Loss 0.0086 (0.0086)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.624 (3.624)	Loss 0.0034 (0.0034)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02899 
+Best Prec@1: 100.000
+Epoch: [63][0/8], lr: 0.00010	Time 3.506 (3.506)	Data 3.036 (3.036)	Loss 0.0933 (0.0933)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.714 (3.714)	Loss 0.0028 (0.0028)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02331 
+Best Prec@1: 100.000
+Epoch: [64][0/8], lr: 0.00010	Time 3.580 (3.580)	Data 3.107 (3.107)	Loss 0.2307 (0.2307)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.547 (3.547)	Loss 0.0025 (0.0025)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.03198 
+Best Prec@1: 100.000
+Epoch: [65][0/8], lr: 0.00010	Time 3.489 (3.489)	Data 3.068 (3.068)	Loss 0.1150 (0.1150)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.669 (3.669)	Loss 0.0055 (0.0055)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02313 
+Best Prec@1: 100.000
+Epoch: [66][0/8], lr: 0.00010	Time 3.192 (3.192)	Data 2.815 (2.815)	Loss 0.0297 (0.0297)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.507 (3.507)	Loss 0.0040 (0.0040)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02874 
+Best Prec@1: 100.000
+Epoch: [67][0/8], lr: 0.00010	Time 3.396 (3.396)	Data 2.933 (2.933)	Loss 0.0085 (0.0085)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.625 (3.625)	Loss 0.0038 (0.0038)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02076 
+Best Prec@1: 100.000
+Epoch: [68][0/8], lr: 0.00010	Time 3.135 (3.135)	Data 2.769 (2.769)	Loss 0.2499 (0.2499)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.634 (3.634)	Loss 0.0037 (0.0037)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02581 
+Best Prec@1: 100.000
+Epoch: [69][0/8], lr: 0.00010	Time 3.421 (3.421)	Data 3.053 (3.053)	Loss 0.5582 (0.5582)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.534 (3.534)	Loss 0.0026 (0.0026)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01351 
+Best Prec@1: 100.000
+Epoch: [70][0/8], lr: 0.00010	Time 3.707 (3.707)	Data 3.209 (3.209)	Loss 0.1690 (0.1690)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.606 (3.606)	Loss 0.0022 (0.0022)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02312 
+Best Prec@1: 100.000
+Epoch: [71][0/8], lr: 0.00010	Time 3.786 (3.786)	Data 3.219 (3.219)	Loss 0.0590 (0.0590)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.548 (3.548)	Loss 0.0014 (0.0014)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02103 
+Best Prec@1: 100.000
+Epoch: [72][0/8], lr: 0.00010	Time 3.225 (3.225)	Data 2.768 (2.768)	Loss 0.0583 (0.0583)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.619 (3.619)	Loss 0.0016 (0.0016)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00964 
+Best Prec@1: 100.000
+Epoch: [73][0/8], lr: 0.00010	Time 3.562 (3.562)	Data 3.061 (3.061)	Loss 0.0225 (0.0225)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.563 (3.563)	Loss 0.0007 (0.0007)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01007 
+Best Prec@1: 100.000
+Epoch: [74][0/8], lr: 0.00010	Time 3.588 (3.588)	Data 3.097 (3.097)	Loss 0.0484 (0.0484)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.551 (3.551)	Loss 0.0016 (0.0016)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00682 
+Best Prec@1: 100.000
+Epoch: [75][0/8], lr: 0.00010	Time 3.519 (3.519)	Data 3.051 (3.051)	Loss 0.1338 (0.1338)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.702 (3.702)	Loss 0.0003 (0.0003)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00832 
+Best Prec@1: 100.000
+Epoch: [76][0/8], lr: 0.00010	Time 3.750 (3.750)	Data 3.232 (3.232)	Loss 0.1846 (0.1846)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.623 (3.623)	Loss 0.0004 (0.0004)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00680 
+Best Prec@1: 100.000
+Epoch: [77][0/8], lr: 0.00010	Time 3.548 (3.548)	Data 3.106 (3.106)	Loss 0.0463 (0.0463)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.599 (3.599)	Loss 0.0003 (0.0003)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00688 
+Best Prec@1: 100.000
+Epoch: [78][0/8], lr: 0.00010	Time 3.329 (3.329)	Data 2.829 (2.829)	Loss 0.0554 (0.0554)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.531 (3.531)	Loss 0.0005 (0.0005)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00539 
+Best Prec@1: 100.000
+Epoch: [79][0/8], lr: 0.00010	Time 3.474 (3.474)	Data 2.930 (2.930)	Loss 0.0883 (0.0883)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.607 (3.607)	Loss 0.0011 (0.0011)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00354 
+Best Prec@1: 100.000
+Epoch: [80][0/8], lr: 0.00010	Time 3.909 (3.909)	Data 3.382 (3.382)	Loss 0.6187 (0.6187)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.538 (3.538)	Loss 0.0008 (0.0008)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00558 
+Best Prec@1: 100.000
+Epoch: [81][0/8], lr: 0.00010	Time 3.675 (3.675)	Data 3.238 (3.238)	Loss 0.3768 (0.3768)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.627 (3.627)	Loss 0.0002 (0.0002)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00604 
+Best Prec@1: 100.000
+Epoch: [82][0/8], lr: 0.00010	Time 3.270 (3.270)	Data 2.901 (2.901)	Loss 0.0028 (0.0028)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.547 (3.547)	Loss 0.0004 (0.0004)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00645 
+Best Prec@1: 100.000
+Epoch: [83][0/8], lr: 0.00010	Time 3.663 (3.663)	Data 3.241 (3.241)	Loss 0.1240 (0.1240)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.657 (3.657)	Loss 0.0004 (0.0004)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00689 
+Best Prec@1: 100.000
+Epoch: [84][0/8], lr: 0.00010	Time 3.595 (3.595)	Data 3.065 (3.065)	Loss 0.0782 (0.0782)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.523 (3.523)	Loss 0.0005 (0.0005)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00468 
+Best Prec@1: 100.000
+Epoch: [85][0/8], lr: 0.00010	Time 3.710 (3.710)	Data 3.232 (3.232)	Loss 0.3257 (0.3257)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.581 (3.581)	Loss 0.0005 (0.0005)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00607 
+Best Prec@1: 100.000
+Epoch: [86][0/8], lr: 0.00010	Time 3.501 (3.501)	Data 3.052 (3.052)	Loss 0.5594 (0.5594)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.600 (3.600)	Loss 0.0010 (0.0010)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00911 
+Best Prec@1: 100.000
+Epoch: [87][0/8], lr: 0.00010	Time 3.580 (3.580)	Data 3.050 (3.050)	Loss 0.0518 (0.0518)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.542 (3.542)	Loss 0.0006 (0.0006)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00887 
+Best Prec@1: 100.000
+Epoch: [88][0/8], lr: 0.00010	Time 3.437 (3.437)	Data 3.079 (3.079)	Loss 0.0716 (0.0716)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.513 (3.513)	Loss 0.0005 (0.0005)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00795 
+Best Prec@1: 100.000
+Epoch: [89][0/8], lr: 0.00010	Time 3.380 (3.380)	Data 2.918 (2.918)	Loss 0.1508 (0.1508)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.501 (3.501)	Loss 0.0008 (0.0008)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.02044 
+Best Prec@1: 100.000
+Epoch: [90][0/8], lr: 0.00010	Time 3.362 (3.362)	Data 2.903 (2.903)	Loss 0.2542 (0.2542)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.503 (3.503)	Loss 0.0019 (0.0019)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00778 
+Best Prec@1: 100.000
+Epoch: [91][0/8], lr: 0.00010	Time 3.610 (3.610)	Data 3.199 (3.199)	Loss 0.0274 (0.0274)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.506 (3.506)	Loss 0.0012 (0.0012)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01224 
+Best Prec@1: 100.000
+Epoch: [92][0/8], lr: 0.00010	Time 3.424 (3.424)	Data 3.048 (3.048)	Loss 0.0310 (0.0310)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.497 (3.497)	Loss 0.0021 (0.0021)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01041 
+Best Prec@1: 100.000
+Epoch: [93][0/8], lr: 0.00010	Time 3.661 (3.661)	Data 3.201 (3.201)	Loss 0.4382 (0.4382)	Prec@1 75.000 (75.000)
+Test: [0/4]	Time 3.665 (3.665)	Loss 0.0005 (0.0005)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00998 
+Best Prec@1: 100.000
+Epoch: [94][0/8], lr: 0.00010	Time 3.339 (3.339)	Data 2.925 (2.925)	Loss 0.0546 (0.0546)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.446 (3.446)	Loss 0.0023 (0.0023)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00990 
+Best Prec@1: 100.000
+Epoch: [95][0/8], lr: 0.00010	Time 3.432 (3.432)	Data 3.040 (3.040)	Loss 0.3198 (0.3198)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.629 (3.629)	Loss 0.0015 (0.0015)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01211 
+Best Prec@1: 100.000
+Epoch: [96][0/8], lr: 0.00010	Time 3.385 (3.385)	Data 2.977 (2.977)	Loss 0.1982 (0.1982)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.520 (3.520)	Loss 0.0007 (0.0007)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00728 
+Best Prec@1: 100.000
+Epoch: [97][0/8], lr: 0.00010	Time 3.677 (3.677)	Data 3.150 (3.150)	Loss 0.1134 (0.1134)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.470 (3.470)	Loss 0.0007 (0.0007)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00665 
+Best Prec@1: 100.000
+Epoch: [98][0/8], lr: 0.00010	Time 3.232 (3.232)	Data 2.813 (2.813)	Loss 0.0181 (0.0181)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.622 (3.622)	Loss 0.0020 (0.0020)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00758 
+Best Prec@1: 100.000
+Epoch: [99][0/8], lr: 0.00010	Time 3.569 (3.569)	Data 3.159 (3.159)	Loss 0.0820 (0.0820)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.454 (3.454)	Loss 0.0026 (0.0026)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00797 
+Best Prec@1: 100.000
+Epoch: [100][0/8], lr: 0.00001	Time 3.839 (3.839)	Data 3.346 (3.346)	Loss 0.0647 (0.0647)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.574 (3.574)	Loss 0.0004 (0.0004)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00596 
+Best Prec@1: 100.000
+Epoch: [101][0/8], lr: 0.00001	Time 3.688 (3.688)	Data 3.158 (3.158)	Loss 0.0026 (0.0026)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.633 (3.633)	Loss 0.0011 (0.0011)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00519 
+Best Prec@1: 100.000
+Epoch: [102][0/8], lr: 0.00001	Time 3.616 (3.616)	Data 3.216 (3.216)	Loss 0.3473 (0.3473)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.532 (3.532)	Loss 0.0009 (0.0009)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00502 
+Best Prec@1: 100.000
+Epoch: [103][0/8], lr: 0.00001	Time 3.396 (3.396)	Data 2.991 (2.991)	Loss 0.0003 (0.0003)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.556 (3.556)	Loss 0.0005 (0.0005)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00647 
+Best Prec@1: 100.000
+Epoch: [104][0/8], lr: 0.00001	Time 3.379 (3.379)	Data 2.988 (2.988)	Loss 0.0524 (0.0524)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.497 (3.497)	Loss 0.0012 (0.0012)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.01889 
+Best Prec@1: 100.000
+Epoch: [105][0/8], lr: 0.00001	Time 3.561 (3.561)	Data 3.085 (3.085)	Loss 0.0013 (0.0013)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.624 (3.624)	Loss 0.0008 (0.0008)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00423 
+Best Prec@1: 100.000
+Epoch: [106][0/8], lr: 0.00001	Time 3.430 (3.430)	Data 3.009 (3.009)	Loss 0.2976 (0.2976)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.576 (3.576)	Loss 0.0019 (0.0019)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00510 
+Best Prec@1: 100.000
+Epoch: [107][0/8], lr: 0.00001	Time 3.440 (3.440)	Data 3.024 (3.024)	Loss 0.0004 (0.0004)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.519 (3.519)	Loss 0.0009 (0.0009)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00550 
+Best Prec@1: 100.000
+Epoch: [108][0/8], lr: 0.00001	Time 3.493 (3.493)	Data 2.945 (2.945)	Loss 0.1680 (0.1680)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.553 (3.553)	Loss 0.0006 (0.0006)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00485 
+Best Prec@1: 100.000
+Epoch: [109][0/8], lr: 0.00001	Time 3.790 (3.790)	Data 3.252 (3.252)	Loss 0.1099 (0.1099)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.544 (3.544)	Loss 0.0015 (0.0015)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00614 
+Best Prec@1: 100.000
+Epoch: [110][0/8], lr: 0.00001	Time 3.447 (3.447)	Data 3.033 (3.033)	Loss 0.0144 (0.0144)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.612 (3.612)	Loss 0.0003 (0.0003)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00447 
+Best Prec@1: 100.000
+Epoch: [111][0/8], lr: 0.00001	Time 3.360 (3.360)	Data 2.837 (2.837)	Loss 0.0001 (0.0001)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.548 (3.548)	Loss 0.0011 (0.0011)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00365 
+Best Prec@1: 100.000
+Epoch: [112][0/8], lr: 0.00001	Time 3.499 (3.499)	Data 3.067 (3.067)	Loss 0.0517 (0.0517)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.530 (3.530)	Loss 0.0012 (0.0012)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00504 
+Best Prec@1: 100.000
+Epoch: [113][0/8], lr: 0.00001	Time 3.528 (3.528)	Data 3.053 (3.053)	Loss 0.0005 (0.0005)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.543 (3.543)	Loss 0.0002 (0.0002)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00575 
+Best Prec@1: 100.000
+Epoch: [114][0/8], lr: 0.00001	Time 3.406 (3.406)	Data 3.003 (3.003)	Loss 0.0278 (0.0278)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.561 (3.561)	Loss 0.0012 (0.0012)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00384 
+Best Prec@1: 100.000
+Epoch: [115][0/8], lr: 0.00001	Time 3.694 (3.694)	Data 3.283 (3.283)	Loss 0.1934 (0.1934)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.579 (3.579)	Loss 0.0001 (0.0001)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00646 
+Best Prec@1: 100.000
+Epoch: [116][0/8], lr: 0.00001	Time 3.752 (3.752)	Data 3.240 (3.240)	Loss 0.0700 (0.0700)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.495 (3.495)	Loss 0.0004 (0.0004)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00391 
+Best Prec@1: 100.000
+Epoch: [117][0/8], lr: 0.00001	Time 3.837 (3.837)	Data 3.360 (3.360)	Loss 0.6223 (0.6223)	Prec@1 62.500 (62.500)
+Test: [0/4]	Time 3.555 (3.555)	Loss 0.0003 (0.0003)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00339 
+Best Prec@1: 100.000
+Epoch: [118][0/8], lr: 0.00001	Time 3.223 (3.223)	Data 2.837 (2.837)	Loss 0.0009 (0.0009)	Prec@1 100.000 (100.000)
+Test: [0/4]	Time 3.485 (3.485)	Loss 0.0006 (0.0006)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00339 
+Best Prec@1: 100.000
+Epoch: [119][0/8], lr: 0.00001	Time 3.009 (3.009)	Data 2.611 (2.611)	Loss 0.3715 (0.3715)	Prec@1 87.500 (87.500)
+Test: [0/4]	Time 3.706 (3.706)	Loss 0.0003 (0.0003)	Prec@1 100.000 (100.000)
+Testing Results: Prec@1 100.000 Loss 0.00652 
+Best Prec@1: 100.000
