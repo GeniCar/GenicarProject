@@ -79,7 +79,7 @@ group.add_argument('--frame_folder', type=str, default=None)
 parser.add_argument('--modality', type=str, default='RGB',
                     choices=['RGB', 'Flow', 'RGBDiff'], )
 parser.add_argument('--dataset', type=str, default='moments',
-                    choices=['something', 'jester', 'moments', 'somethingv2'])
+                    choices=['something', 'jester', 'moments', 'somethingv2','drive'])
 parser.add_argument('--rendered_output', type=str, default=None)
 parser.add_argument('--arch', type=str, default="InceptionV3")
 parser.add_argument('--input_size', type=int, default=224)
@@ -91,11 +91,11 @@ parser.add_argument('--weights', type=str)
 args = parser.parse_args()
 
 # Get dataset categories.
-categories_file = 'video_datasets/something/category.txt'.format(args.dataset)
+categories_file = 'video_datasets/drive/category.txt'.format(args.dataset)
 categories = [line.rstrip() for line in open(categories_file, 'r').readlines()]
 num_class = len(categories)
 
-args.arch = 'InceptionV3' if args.dataset == 'moments' else 'resnet18'
+#args.arch = 'InceptionV3' if args.dataset == 'moments' else 'resnet50'
 
 # Load model.
 net = TSN(num_class,
@@ -106,13 +106,15 @@ net = TSN(num_class,
           img_feature_dim=args.img_feature_dim, print_spec=False)
 
 
-net.consensus.fc_fusion_scales[0][3] = nn.Linear(256, 2, bias=True)
-net.consensus.fc_fusion_scales[1][3] = nn.Linear(256, 2, bias=True)
-net.consensus.fc_fusion_scales[2][3] = nn.Linear(256, 2, bias=True)
-net.consensus.fc_fusion_scales[3][3] = nn.Linear(256, 2, bias=True)
-net.consensus.fc_fusion_scales[4][3] = nn.Linear(256, 2, bias=True)
-net.consensus.fc_fusion_scales[5][3] = nn.Linear(256, 2, bias=True)
-net.consensus.fc_fusion_scales[6][3] = nn.Linear(256, 2, bias=True)
+
+
+net.consensus.fc_fusion_scales[0][3] = nn.Linear(256, 3, bias=True)
+net.consensus.fc_fusion_scales[1][3] = nn.Linear(256, 3, bias=True)
+net.consensus.fc_fusion_scales[2][3] = nn.Linear(256, 3, bias=True)
+net.consensus.fc_fusion_scales[3][3] = nn.Linear(256, 3, bias=True)
+net.consensus.fc_fusion_scales[4][3] = nn.Linear(256, 3, bias=True)
+net.consensus.fc_fusion_scales[5][3] = nn.Linear(256, 3, bias=True)
+net.consensus.fc_fusion_scales[6][3] = nn.Linear(256, 3, bias=True)
 
 checkpoint = torch.load(args.weights)
 base_dict = {'.'.join(k.split('.')[1:]): v for k, v in list(checkpoint['state_dict'].items())}

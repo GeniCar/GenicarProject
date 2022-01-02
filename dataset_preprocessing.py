@@ -22,7 +22,7 @@ def make_dir(mydir):
 
 
 def extract_frame(input_file, output_file):
-    output_dir = f'video_datasets/drive/{output_file}'
+    output_dir = f'video_datasets/drive/data/{output_file}'
     make_dir(output_dir)
 
     vid = cv2.VideoCapture(input_file)
@@ -65,7 +65,7 @@ def split_dataset():
 
     return train_dataset, val_dataset
 
-def write_dataset(train_dataset, val_dataset)
+def write_dataset(train_dataset, val_dataset):
     with open(train_file, "w+") as file:
         file.write('\n'.join(train_dataset))
 
@@ -74,14 +74,13 @@ def write_dataset(train_dataset, val_dataset)
 
 
 if __name__ == "__main__":
-    class1_videos = glob('./가까워짐/*.mp4')
-    class2_videos = glob('./멀어짐/*.mp4')
-    class3_videos = glob('./사고/*.mp4')
+    class1_videos = glob('video_datasets/drive/가까워짐/*.mp4')
+    class2_videos = glob('video_datasets/drive/멀어짐/*.mp4')
+    class3_videos = glob('video_datasets/drive/사고/*.mp4')
 
-    write_total_dataset(class1_videos, 1)
-    write_total_dataset(class2_videos, 2)
-    write_total_dataset(class3_videos, 3)
+    write_total_dataset(class1_videos, 0)
+    write_total_dataset(class2_videos, 1)
+    write_total_dataset(class3_videos, 2)
 
-    split_dataset()
-    write_dataset()
-
+    train_dataset, val_dataset = split_dataset()
+    write_dataset(train_dataset,val_dataset)

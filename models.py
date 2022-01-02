@@ -90,7 +90,7 @@ class TSN(nn.Module):
 
     def _prepare_base_model(self, base_model):
 
-        if 'resnet' in base_model or 'vgg' in base_model:
+        if 'resnet' in base_model or 'vgg16' in base_model:
             self.base_model = getattr(torchvision.models, base_model)(True)
             self.base_model.last_layer_name = 'fc'
             self.input_size = 224
@@ -103,6 +103,9 @@ class TSN(nn.Module):
             elif self.modality == 'RGBDiff':
                 self.input_mean = [0.485, 0.456, 0.406] + [0] * 3 * self.new_length
                 self.input_std = self.input_std + [np.mean(self.input_std) * 2] * 3 * self.new_length
+
+
+       
         elif base_model == 'BNInception':
             import model_zoo
             self.base_model = getattr(model_zoo, base_model)()

@@ -109,3 +109,4 @@ video_datasets/
 pretrain/
 model/
 model_zoo/
+save_model

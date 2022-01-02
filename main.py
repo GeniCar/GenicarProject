@@ -19,6 +19,8 @@ from opts import parser
 import datasets_video
 
 
+
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 device
 
@@ -30,11 +32,21 @@ def main():
     check_rootfolders()
 
     categories, args.train_list, args.val_list, args.root_path, prefix = datasets_video.return_dataset(args.dataset, args.modality)
-    num_class = 174 # len(categories)
 
+
+   
     args.store_name = '_'.join(['TRN', args.dataset, args.modality, args.arch, args.consensus_type, 'segment%d'% args.num_segments])
     print('storing name: ' + args.store_name)
 
+
+    # use pretrain model num_class = pre train class
+    if args.arch =='BNInception':
+        num_class = 174
+    else:
+        num_class = len(categories)
+    print(num_class)
+    
+    # import model TSN(CNN+MLP)+ TRN_module (if consensus_type ="TRNmultiscale"or TRN)
     model = TSN(num_class, args.num_segments, args.modality,
                 base_model=args.arch,
                 consensus_type=args.consensus_type,
@@ -42,38 +54,22 @@ def main():
                 img_feature_dim=args.img_feature_dim,
                 partial_bn=not args.no_partialbn)
 
-
-    print(device)
-    
-    model.consensus.fc_fusion_scales[0][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[1][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[2][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[3][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[4][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[5][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[6][3] = nn.Linear(256, 2, bias=True)
+    # BN Inception's segment is only 8
+    if args.arch == 'BNInception':
+        if args.num_segments == 8:
+            checkpoint = torch.load('pretrain/TRN_somethingv2_RGB_BNInception_TRNmultiscale_segment8_best.pth.tar','cpu')
+            base_dict = {'.'.join(k.split('.')[1:]): v for k, v in list(checkpoint['state_dict'].items())}
+            model.load_state_dict(base_dict)
+        else: 
+            raise ValueError("Pretrain_model is only segments 8")
+            
+        
+    for i in range(args.num_segments-1):
+        model.consensus.fc_fusion_scales[i][3] = nn.Linear(256, 3, bias=True)
 
     print(model)
-
-    '''
-    checkpoint = torch.load('pretrain/TRN_somethingv2_RGB_BNInception_TRNmultiscale_segment8_best.pth.tar', 'cpu')
-    base_dict = {'.'.join(k.split('.')[1:]): v for k, v in list(checkpoint['state_dict'].items())}
-    model.load_state_dict(base_dict)
-
-    model.consensus.fc_fusion_scales[0][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[1][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[2][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[3][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[4][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[5][3] = nn.Linear(256, 2, bias=True)
-    model.consensus.fc_fusion_scales[6][3] = nn.Linear(256, 2, bias=True)
-
-    print(model) 
-    '''
-
-
-
-
+    
+    
 
     crop_size = model.crop_size
     scale_size = model.scale_size
@@ -158,45 +154,40 @@ def main():
         validate(val_loader, model, criterion, 0)
         return
 
+    # for draw train, valid set learning curve 
     history = {"train_loss": [], "train_acc": [],"val_loss":[],"val_acc":[]}
+    
     log_training = open(os.path.join(args.root_log, '%s.csv' % args.store_name), 'w')
+    
     for epoch in range(args.start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch, args.lr_steps)
 
         
-        # train for one epoch           # return losses.val/losses.avg, top1.val/top1.avg, output
+        # import def train
         train_loss, train_acc= train(train_loader, model, criterion, optimizer, epoch, log_training)
-       
+        
         train_loss = train_loss.to('cpu').numpy()
         train_acc = train_acc.to('cpu').numpy()
         
         history["train_loss"].append(train_loss)
         history["train_acc"].append(train_acc)
-
-
         
-        #val_loss, prec1, val_output,val_output_new, val_output_best = validate(val_loader, model, criterion, (epoch + 1) * len(train_loader), log_training)
-        #val_loss = val_loss.to('cpu').numpy()
-        #prec1 = prec1.to('cpu').numpy()
-        #history["valid_loss"].append(val_loss)
-        #history["valid_acc"].append(prec1)
-
-        # evaluate on validation set
-        # eval_freq default = 5 / epochs default = 120
+        # down code is print validate result 5 epoch interval
         # if (epoch + 1) % args.eval_freq == 0 or epoch == args.epochs - 1:
+
         val_loss,prec1 = validate(val_loader, model, criterion, (epoch + 1) * len(train_loader), log_training)
+
 
         val_loss = val_loss.to('cpu').numpy()
         val_acc = prec1.to('cpu').numpy()
-        
+                
         history["val_loss"].append(val_loss)
         history["val_acc"].append(val_acc)
+                
 
-        
 
-            
 
-           # remember best prec@1 and save checkpoint
+        # remember best prec@1 and save checkpoint
         is_best = prec1 > best_prec1
         best_prec1 = max(prec1, best_prec1)
         save_checkpoint({
@@ -204,8 +195,10 @@ def main():
             'arch': args.arch,
             'state_dict': model.state_dict(),
             'best_prec1': best_prec1,
-        }, is_best)
+            }, is_best)
 
+
+    # show dataset learning curve
     plot_history(history,args.arch)
 
 
