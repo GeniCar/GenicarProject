@@ -17,8 +17,8 @@
 이러한 보조 역할을 하기 위해 저희는 연속적인 이미지 프레임을 입력으로 받아 프레임간의 관계를 추론하여 전체적인 상황을 이해할 수 있는 모델을 사용하였습니다. 프로젝트에 활용한 모델은 [Temporal Relational Reasoning in Videos](https://arxiv.org/pdf/1711.08496.pdf)에서 제안된 모델로 동영상을 입력받아 상황을 이해하는 모델입니다.
 
 본 프로젝트를 통한 저희의 기여점은 다음과 같습니다.
-##### `1. 기존에 존재하는 모델을 새로운 도메인, 새로운 문제를 해결하는데 활용할 수 있다는 가능성을 실험을 통해 증명하였습니다.`
-##### `2. 자율주행에 주로 활용되고 있는 기술을 보완할 수 있는 방법론을 제시하였습니다.`
+##### `1. 기존에 존재하는 모델을 새로운 도메인, 문제를 해결하는데 활용 가능한 것을 실험을 통해 증명`
+##### `2. 자율주행에 주로 활용되고 있는 기술을 보완할 수 있는 방법론을 제시`
 <br/>
 
 ## 데이터셋
@@ -61,10 +61,47 @@
 
 <br/>
 
+## 코드
+본 프로젝트의 코드는 [zhoubolei/TRN-pytorch](https://github.com/zhoubolei/TRN-pytorch)을 기반으로 하였으며 프로젝트의 목적에 맞추어 수정하였습니다.
+
+### Requierments
+```
+python=3.7.12
+pytorch=1.10.0+cu111
+pillow=8.0.0
+pyyaml=5.4.1
+opencv=3.4.2
+moviepy=1.0.1
+```
+
+### Train
+```bash
+python main.py {dataset} RGB --arch {model archtecture} --num_segments 8 --batch-size {batch size}
+```
+
+### Test
+```bash
+python test_video.py --arch {model archtecture} --dataset {dataset} --weights {weight path} --frame_folder {test data path}
+```
+<br/>
+
 ## 실험 결과
 
 <br/>
 
 ## 향후 연구
+- 실제 자율주행에 활용되기 위한 실시간성 고려
+- 더욱 다양한 클래스 (상황) 추가
 
 <br/>
+
+## 참고
+B. Zhou, A. Andonian, and A. Torralba. Temporal Relational Reasoning in Videos. European Conference on Computer Vision (ECCV), 2018.
+```
+@article{zhou2017temporalrelation,
+    title = {Temporal Relational Reasoning in Videos},
+    author = {Zhou, Bolei and Andonian, Alex and Oliva, Aude and Torralba, Antonio},
+    journal={European Conference on Computer Vision},
+    year={2018}
+}
+```
