@@ -33,6 +33,7 @@ def main():
 
     categories, args.train_list, args.val_list, args.root_path, prefix = datasets_video.return_dataset(args.dataset, args.modality)
 
+    
 
    
     args.store_name = '_'.join(['TRN', args.dataset, args.modality, args.arch, args.consensus_type, 'segment%d'% args.num_segments])
@@ -57,7 +58,7 @@ def main():
     # BN Inception's segment is only 8
     if args.arch == 'BNInception':
         if args.num_segments == 8:
-            checkpoint = torch.load('pretrain/TRN_somethingv2_RGB_BNInception_TRNmultiscale_segment8_best.pth.tar','cpu')
+            checkpoint = torch.load('pretrain/TRN_somethingv2_RGB_BNInception_TRNmultiscale_segment8_best.pth.tar')
             base_dict = {'.'.join(k.split('.')[1:]): v for k, v in list(checkpoint['state_dict'].items())}
             model.load_state_dict(base_dict)
         else: 
@@ -134,6 +135,9 @@ def main():
                    ])),
         batch_size=args.batch_size, shuffle=False,
         num_workers=2, pin_memory=True)
+
+
+    
 
     # define loss function (criterion) and optimizer
     if args.loss_type == 'nll':
@@ -300,7 +304,7 @@ def validate(val_loader, model, criterion, iter, log):
 
             losses.update(loss.data, input.size(0))
             top1.update(prec1[0], input.size(0))
-            #top5.update(prec5[0], input.size(0))
+            
 
             # measure elapsed time
             batch_time.update(time.time() - end)
@@ -412,4 +416,6 @@ def check_rootfolders():
 
 if __name__ == '__main__':
     main()
+
 # %%
+

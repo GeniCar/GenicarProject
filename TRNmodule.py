@@ -1,4 +1,3 @@
-# the relation consensus module by Bolei
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

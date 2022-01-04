@@ -77,11 +77,11 @@ group = parser.add_mutually_exclusive_group(required=True)
 group.add_argument('--video_file', type=str, default=None)
 group.add_argument('--frame_folder', type=str, default=None)
 parser.add_argument('--modality', type=str, default='RGB',
-                    choices=['RGB', 'Flow', 'RGBDiff'], )
+                    choices=['RGB'], )
 parser.add_argument('--dataset', type=str, default='moments',
-                    choices=['something', 'jester', 'moments', 'somethingv2','drive'])
+                    choices=['something','drive'])
 parser.add_argument('--rendered_output', type=str, default=None)
-parser.add_argument('--arch', type=str, default="InceptionV3")
+parser.add_argument('--arch', type=str, default="BNInception")
 parser.add_argument('--input_size', type=int, default=224)
 parser.add_argument('--test_segments', type=int, default=8)
 parser.add_argument('--img_feature_dim', type=int, default=256)
@@ -107,6 +107,7 @@ net = TSN(num_class,
 
 
 
+checkpoint = torch.load(args.weights)
 
 net.consensus.fc_fusion_scales[0][3] = nn.Linear(256, 3, bias=True)
 net.consensus.fc_fusion_scales[1][3] = nn.Linear(256, 3, bias=True)
@@ -116,7 +117,7 @@ net.consensus.fc_fusion_scales[4][3] = nn.Linear(256, 3, bias=True)
 net.consensus.fc_fusion_scales[5][3] = nn.Linear(256, 3, bias=True)
 net.consensus.fc_fusion_scales[6][3] = nn.Linear(256, 3, bias=True)
 
-checkpoint = torch.load(args.weights)
+
 base_dict = {'.'.join(k.split('.')[1:]): v for k, v in list(checkpoint['state_dict'].items())}
 net.load_state_dict(base_dict)
 net.cuda().eval()

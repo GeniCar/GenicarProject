@@ -7,6 +7,7 @@ import string
 total_file = f'video_datasets/drive/total_dataset.txt'
 train_file = f'video_datasets/drive/train_videofolder.txt'
 val_file = f'video_datasets/drive/val_videofolder.txt'
+test_file = f'video_datasets/drive/test_videofolder.txt'
 
 
 def random_char(n):
@@ -60,8 +61,9 @@ def split_dataset():
 
     num_data = len(data)
 
-    train_dataset = data[:int(num_data * 0.7)]
-    val_dataset = data[int(num_data * 0.7):]
+    train_dataset = data[:int(num_data * 0.8)]
+    val_dataset = data[int(num_data * 0.8):]
+    #test_dataset = data[]
 
     return train_dataset, val_dataset
 
@@ -71,6 +73,9 @@ def write_dataset(train_dataset, val_dataset):
 
     with open(val_file, "w+") as file:
         file.write('\n'.join(val_dataset))
+    
+    #with open(test_file, "w+") as file:
+        #file.write('\n'.join(test_dataset))
 
 
 if __name__ == "__main__":
@@ -82,5 +87,5 @@ if __name__ == "__main__":
     write_total_dataset(class2_videos, 1)
     write_total_dataset(class3_videos, 2)
 
-    train_dataset, val_dataset = split_dataset()
-    write_dataset(train_dataset,val_dataset)
+    train_dataset, val_dataset= split_dataset()
+    write_dataset(train_dataset, val_dataset)
