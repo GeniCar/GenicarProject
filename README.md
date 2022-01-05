@@ -14,12 +14,13 @@
 ### 2. 멀어짐
 
 
-|![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148161174-037957ac-d0c6-4628-a894-10bf98156928.gif)|![멀어짐 동영상](https://user-images.githubusercontent.com/60677948/148161556-2aa00c12-c08b-49ed-8942-8d1a8a8d22e3.gif)|
+|![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148161174-037957ac-d0c6-4628-a894-10bf98156928.gif)|![멀어짐 동영상](https://user-images.githubusercontent.com/60677948/148161556-2aa00c12-c08b-49ed-8942-8d1a8a8d22e3.gif)|![1사고](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
 |:-:|:-:|
 
 
+
 ### 3. 사고
-|![사고](https://user-images.githubusercontent.com/60677948/148162001-56494f6d-5dd9-437d-bcad-1064090ad776.gif)|![new사고](https://user-images.githubusercontent.com/60677948/148163077-3224fd20-49a4-4b73-b163-07e33aa8e295.gif)|
+|![사고](https://user-images.githubusercontent.com/60677948/148162001-56494f6d-5dd9-437d-bcad-1064090ad776.gif)|
 |:-:|:-:|
 
 
