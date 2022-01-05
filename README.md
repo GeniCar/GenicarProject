@@ -19,8 +19,9 @@
 
 
 
-![](https://user-images.githubusercontent.com/60677948/148156847-e3501bb7-b4f9-4722-b163-1d0eec0ee73e.gif)
-![가까이코드](https://user-images.githubusercontent.com/60677948/148157203-d5cdbd12-49e7-437c-ba0b-3a571e55eec4.gif)
+|![](https://user-images.githubusercontent.com/60677948/148156847-e3501bb7-b4f9-4722-b163-1d0eec0ee73e.gif)|
+|:-:|:-:|
+|![가까이코드](https://user-images.githubusercontent.com/60677948/148157203-d5cdbd12-49e7-437c-ba0b-3a571e55eec4.gif)|
 
 
 
