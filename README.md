@@ -7,8 +7,7 @@
 
 ### 1. 가까워짐 
 
-|![가까움동영상](https://user-images.githubusercontent.com/60677948/148168155-bd464592-461f-4092-baed-46300ac820b3.gif)|
-![가까움시연](https://user-images.githubusercontent.com/60677948/148168172-ad017709-c9f4-4fd0-a778-38536dbde7c8.gif)|
+|![가까움동영상](https://user-images.githubusercontent.com/60677948/148168155-bd464592-461f-4092-baed-46300ac820b3.gif)|![가까움시연](https://user-images.githubusercontent.com/60677948/148168172-ad017709-c9f4-4fd0-a778-38536dbde7c8.gif)|
 |:-:|:-:|
 
 
