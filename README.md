@@ -3,29 +3,7 @@
 프로젝트는 **쏘카x멋사 AI 엔지니어 육성 부트캠프 해커톤 과정(2021.12.20 ~ 2022.01.07)** 동안 진행되었습니다.
 <br/>
 
-## 모델 시연 영상
 
-### 1. 가까워짐 
-
-|![가까움동영상](https://user-images.githubusercontent.com/60677948/148168155-bd464592-461f-4092-baed-46300ac820b3.gif)|![가까운 시연](https://user-images.githubusercontent.com/60677948/148168378-4152794b-7712-4226-9654-fac9806816d2.gif)|
-|:-:|:-:|
-
-
-### 2. 멀어짐
-
-
-|![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148167658-14242e2a-fc0f-48fd-9da0-cd5d8445aa3e.gif)|![멀어짐시연](https://user-images.githubusercontent.com/60677948/148167680-58a2ba9d-dad7-400c-b8f4-2619348f7597.gif)|
-|:-:|:-:|
-
-
-
-
-### 3. 사고
-|![사고동영상](https://user-images.githubusercontent.com/60677948/148164863-992e0019-21c0-4cc9-b70d-8694fc3ffa82.gif)|![사고시연](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
-|:-:|:-:|
-
-
-<br/>
 
 
 ## 프로젝트 배경
@@ -42,16 +20,27 @@
 이러한 보조 역할을 하기 위해 저희는 연속적인 이미지 프레임을 입력으로 받아 프레임간의 관계를 추론하여 전체적인 상황을 이해할 수 있는 모델을 사용하였습니다. 프로젝트에 활용한 모델은 [Temporal Relational Reasoning in Videos](https://arxiv.org/pdf/1711.08496.pdf)에서 제안된 모델로 동영상을 입력받아 상황을 이해하는 모델입니다.
 
 
-
-
-
-
-
-
-
 본 프로젝트를 통한 저희의 기여점은 다음과 같습니다.
 ##### `1. 기존에 존재하는 모델을 새로운 도메인, 문제를 해결하는데 활용 가능한 것을 실험을 통해 증명`
 ##### `2. 자율주행에 주로 활용되고 있는 기술을 보완할 수 있는 방법론을 제시`
+
+
+### 모델 시연 영상
+
+### 1. 가까워짐 
+
+|![가까움동영상](https://user-images.githubusercontent.com/60677948/148168155-bd464592-461f-4092-baed-46300ac820b3.gif)|![가까운 시연](https://user-images.githubusercontent.com/60677948/148168378-4152794b-7712-4226-9654-fac9806816d2.gif)|
+|:-:|:-:|
+
+### 2. 멀어짐
+
+|![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148167658-14242e2a-fc0f-48fd-9da0-cd5d8445aa3e.gif)|![멀어짐시연](https://user-images.githubusercontent.com/60677948/148167680-58a2ba9d-dad7-400c-b8f4-2619348f7597.gif)|
+|:-:|:-:|
+
+### 3. 사고
+|![사고동영상](https://user-images.githubusercontent.com/60677948/148164863-992e0019-21c0-4cc9-b70d-8694fc3ffa82.gif)|![사고시연](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
+|:-:|:-:|
+
 <br/>
 
 ## 데이터셋
