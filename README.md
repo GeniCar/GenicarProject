@@ -3,6 +3,12 @@
 프로젝트는 **쏘카x멋사 AI 엔지니어 육성 부트캠프 해커톤 과정(2021.12.20 ~ 2022.01.07)** 동안 진행되었습니다.
 <br/>
 
+## 모델 시연 영상
+
+|![가까워짐](https://user-images.githubusercontent.com/60677948/148158045-b6bc6a92-74d2-48ad-bb49-0a502acbd75e.gif)|![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/60677948/148159105-cd11f538-2264-4619-a1f7-41445985795a.gif)|
+|:-:|:-:|
+
+
 ## 프로젝트 배경
 프로젝트 주제는 **딥러닝 기반 이미지 분석을 통한 안전 운전 보조 시스템**으로 안전 운전을 위해 운전자를 보조할 수 있도록 차량 주변의 상황을 이해하는 모델을 개발하는 것이 목표입니다.
 
@@ -17,10 +23,6 @@
 이러한 보조 역할을 하기 위해 저희는 연속적인 이미지 프레임을 입력으로 받아 프레임간의 관계를 추론하여 전체적인 상황을 이해할 수 있는 모델을 사용하였습니다. 프로젝트에 활용한 모델은 [Temporal Relational Reasoning in Videos](https://arxiv.org/pdf/1711.08496.pdf)에서 제안된 모델로 동영상을 입력받아 상황을 이해하는 모델입니다.
 
 
-### 테스트 비디오에 대한 모델의 예측
-
-|![가까워짐](https://user-images.githubusercontent.com/60677948/148158045-b6bc6a92-74d2-48ad-bb49-0a502acbd75e.gif)|![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/60677948/148159105-cd11f538-2264-4619-a1f7-41445985795a.gif)|
-|:-:|:-:|
 
 
 
