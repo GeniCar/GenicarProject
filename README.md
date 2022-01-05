@@ -7,21 +7,22 @@
 
 ### 1. 가까워짐 
 
-|![가까워짐](https://user-images.githubusercontent.com/60677948/148158045-b6bc6a92-74d2-48ad-bb49-0a502acbd75e.gif)|![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/60677948/148159105-cd11f538-2264-4619-a1f7-41445985795a.gif)|
+|![가까움동영상](https://user-images.githubusercontent.com/60677948/148168155-bd464592-461f-4092-baed-46300ac820b3.gif)|
+![가까움시연](https://user-images.githubusercontent.com/60677948/148168172-ad017709-c9f4-4fd0-a778-38536dbde7c8.gif)|
 |:-:|:-:|
 
 
 ### 2. 멀어짐
 
 
-|![멀어짐 동ㅇ영](https://user-images.githubusercontent.com/60677948/148167658-14242e2a-fc0f-48fd-9da0-cd5d8445aa3e.gif)|![fin멀어짐](https://user-images.githubusercontent.com/60677948/148167680-58a2ba9d-dad7-400c-b8f4-2619348f7597.gif)|
+|![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148167658-14242e2a-fc0f-48fd-9da0-cd5d8445aa3e.gif)|![멀어짐시연](https://user-images.githubusercontent.com/60677948/148167680-58a2ba9d-dad7-400c-b8f4-2619348f7597.gif)|
 |:-:|:-:|
 
 
 
 
 ### 3. 사고
-|![사고](https://user-images.githubusercontent.com/60677948/148164863-992e0019-21c0-4cc9-b70d-8694fc3ffa82.gif)|![1사고](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
+|![사고동영상](https://user-images.githubusercontent.com/60677948/148164863-992e0019-21c0-4cc9-b70d-8694fc3ffa82.gif)|![사고시연](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
 |:-:|:-:|
 
 
