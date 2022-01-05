@@ -17,12 +17,12 @@
 이러한 보조 역할을 하기 위해 저희는 연속적인 이미지 프레임을 입력으로 받아 프레임간의 관계를 추론하여 전체적인 상황을 이해할 수 있는 모델을 사용하였습니다. 프로젝트에 활용한 모델은 [Temporal Relational Reasoning in Videos](https://arxiv.org/pdf/1711.08496.pdf)에서 제안된 모델로 동영상을 입력받아 상황을 이해하는 모델입니다.
 
 
+### 테스트 비디오에 대한 모델의 예측
 
-<p align="center">
 |![가까워짐](https://user-images.githubusercontent.com/60677948/148158045-b6bc6a92-74d2-48ad-bb49-0a502acbd75e.gif)|![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/60677948/148159105-cd11f538-2264-4619-a1f7-41445985795a.gif)|
 |:-:|:-:|
 
-</p>
+
 
 
 
