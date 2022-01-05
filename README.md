@@ -20,7 +20,7 @@
 
 
 ### 3. 사고
-|![사고](https://user-images.githubusercontent.com/60677948/148162001-56494f6d-5dd9-437d-bcad-1064090ad776.gif)||![1사고](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
+|![사고](https://user-images.githubusercontent.com/60677948/148162001-56494f6d-5dd9-437d-bcad-1064090ad776.gif)|![1사고](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
 |:-:|:-:|
 
 
