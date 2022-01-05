@@ -10,10 +10,11 @@
 |![가까워짐](https://user-images.githubusercontent.com/60677948/148158045-b6bc6a92-74d2-48ad-bb49-0a502acbd75e.gif)|![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/60677948/148159105-cd11f538-2264-4619-a1f7-41445985795a.gif)|
 |:-:|:-:|
 
+
 ### 2. 멀어짐
 
 
-![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148161174-037957ac-d0c6-4628-a894-10bf98156928.gif)
+|![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148161174-037957ac-d0c6-4628-a894-10bf98156928.gif)|![멀어짐 동영상](https://user-images.githubusercontent.com/60677948/148161556-2aa00c12-c08b-49ed-8942-8d1a8a8d22e3.gif)|
 
 <br/>
 
