@@ -79,12 +79,12 @@ moviepy=1.0.1
 
 ### Train
 ```bash
-python main.py {dataset} RGB --arch {model archtecture} --num_segments 8 --batch-size {batch size}
+python main.py --arch {model archtecture} --num_segments 8 --consensus_type TRNmultiscale --batch-size {batch size}
 ```
 
 ### Test
 ```bash
-python test_video.py --arch {model archtecture} --dataset {dataset} --weights {weight path} --frame_folder {test data path}
+python test_video.py --arch {model archtecture} --weights {weight path} --frame_folder {test data path}
 ```
 <br/>
 
