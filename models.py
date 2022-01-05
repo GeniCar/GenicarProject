@@ -2,18 +2,18 @@ from torch import nn
 
 from ops.basic_ops import ConsensusModule, Identity
 from transforms import *
-from torch.nn.init import normal, constant
+from torch.nn.init import normal_, constant_
 
 import TRNmodule
 
+
 class TSN(nn.Module):
-    def __init__(self, num_class, num_segments, modality,
+    def __init__(self, num_class, num_segments,
                  base_model='resnet101', new_length=None,
                  consensus_type='avg', before_softmax=True,
-                 dropout=0.8,img_feature_dim=256,
+                 dropout=0.8, img_feature_dim=256,
                  crop_num=1, partial_bn=True, print_spec=True):
         super(TSN, self).__init__()
-        self.modality = modality
         self.num_segments = num_segments
         self.reshape = True
         self.before_softmax = before_softmax
@@ -25,25 +25,19 @@ class TSN(nn.Module):
             raise ValueError("Only avg consensus can be used after Softmax")
 
         if new_length is None:
-            self.new_length = 1 if modality == "RGB" else 5
-        else:
-            self.new_length = new_length
-        if print_spec == True:
-            print(("""
-    Initializing TSN with base model: {}.
-    TSN Configurations:
-        input_modality:     {}
-        num_segments:       {}
-        new_length:         {}
-        consensus_module:   {}
-        dropout_ratio:      {}
-        img_feature_dim:    {}
-            """.format(base_model, self.modality, self.num_segments, self.new_length, consensus_type, self.dropout, self.img_feature_dim)))
+            self.new_length = 1
+
+        if print_spec:
+            print(f"Initializing TSN with base model: {base_model}\n"
+                  f"TSN Configurations:"
+                  f"num_segments:       {self.num_segments}\n"
+                  f"new_length:         {self.new_length}\n"
+                  f"consensus_module:   {consensus_type}\n"
+                  f"dropout_ratio:      {self.dropout}\n"
+                  f"img_feature_dim:    {self.img_feature_dim}\n")
 
         self._prepare_base_model(base_model)
-
         feature_dim = self._prepare_tsn(num_class)
-
         
         if consensus_type in ['TRN', 'TRNmultiscale']:
             # plug in the Temporal Relation Network Module
@@ -65,7 +59,7 @@ class TSN(nn.Module):
             self.new_fc = None
         else:
             setattr(self.base_model, self.base_model.last_layer_name, nn.Dropout(p=self.dropout))
-            if self.consensus_type in ['TRN','TRNmultiscale']:
+            if self.consensus_type in ['TRN', 'TRNmultiscale']:
                 # create a new linear layer as the frame feature
                 self.new_fc = nn.Linear(feature_dim, self.img_feature_dim)
             else:
@@ -74,15 +68,14 @@ class TSN(nn.Module):
 
         std = 0.001
         if self.new_fc is None:
-            normal(getattr(self.base_model, self.base_model.last_layer_name).weight, 0, std)
-            constant(getattr(self.base_model, self.base_model.last_layer_name).bias, 0)
+            normal_(getattr(self.base_model, self.base_model.last_layer_name).weight, 0, std)
+            constant_(getattr(self.base_model, self.base_model.last_layer_name).bias, 0)
         else:
-            normal(self.new_fc.weight, 0, std)
-            constant(self.new_fc.bias, 0)
+            normal_(self.new_fc.weight, 0, std)
+            constant_(self.new_fc.bias, 0)
         return feature_dim
 
     def _prepare_base_model(self, base_model):
-
         if 'resnet' in base_model or 'vgg16' in base_model:
             self.base_model = getattr(torchvision.models, base_model)(True)
             self.base_model.last_layer_name = 'fc'
@@ -90,7 +83,6 @@ class TSN(nn.Module):
             self.input_mean = [0.485, 0.456, 0.406]
             self.input_std = [0.229, 0.224, 0.225]
 
-            
         elif base_model == 'BNInception':
             import model_zoo
             self.base_model = getattr(model_zoo, base_model)()
@@ -98,9 +90,6 @@ class TSN(nn.Module):
             self.input_size = 224
             self.input_mean = [104, 117, 128]
             self.input_std = [1]
-
-            
-        
 
     def train(self, mode=True):
         """
@@ -163,9 +152,9 @@ class TSN(nn.Module):
                     raise ValueError("New atomic module type: {}. Need to give it a learning policy".format(type(m)))
 
         return [
-            {'params': first_conv_weight, 'lr_mult': 5 if self.modality == 'Flow' else 1, 'decay_mult': 1,
+            {'params': first_conv_weight, 'lr_mult': 1, 'decay_mult': 1,
              'name': "first_conv_weight"},
-            {'params': first_conv_bias, 'lr_mult': 10 if self.modality == 'Flow' else 2, 'decay_mult': 0,
+            {'params': first_conv_bias, 'lr_mult': 2, 'decay_mult': 0,
              'name': "first_conv_bias"},
             {'params': normal_weight, 'lr_mult': 1, 'decay_mult': 1,
              'name': "normal_weight"},
@@ -176,11 +165,7 @@ class TSN(nn.Module):
         ]
 
     def forward(self, input):
-        sample_len = (3 if self.modality == "RGB" else 2) * self.new_length
-
-        if self.modality == 'RGBDiff':
-            sample_len = 3 * self.new_length
-            input = self._get_diff(input)
+        sample_len = 3 * self.new_length
 
         base_out = self.base_model(input.view((-1, sample_len) + input.size()[-2:]))
 
@@ -196,7 +181,7 @@ class TSN(nn.Module):
         return output.squeeze(1)
 
     def _get_diff(self, input, keep_rgb=False):
-        input_c = 3 if self.modality in ["RGB", "RGBDiff"] else 2
+        input_c = 3
         input_view = input.view((-1, self.num_segments, self.new_length + 1, input_c,) + input.size()[2:])
         if keep_rgb:
             new_data = input_view.clone()
@@ -211,7 +196,6 @@ class TSN(nn.Module):
 
         return new_data
 
-
     @property
     def crop_size(self):
         return self.input_size
@@ -221,12 +205,5 @@ class TSN(nn.Module):
         return self.input_size * 256 // 224
 
     def get_augmentation(self):
-        if self.modality == 'RGB':
-            return torchvision.transforms.Compose([GroupMultiScaleCrop(self.input_size, [1, .875, .75, .66]),
-                                                   GroupRandomHorizontalFlip(is_flow=False)])
-        elif self.modality == 'Flow':
-            return torchvision.transforms.Compose([GroupMultiScaleCrop(self.input_size, [1, .875, .75]),
-                                                   GroupRandomHorizontalFlip(is_flow=True)])
-        elif self.modality == 'RGBDiff':
-            return torchvision.transforms.Compose([GroupMultiScaleCrop(self.input_size, [1, .875, .75]),
-                                                   GroupRandomHorizontalFlip(is_flow=False)])
+        return torchvision.transforms.Compose([GroupMultiScaleCrop(self.input_size, [1, .875, .75, .66]),
+                                               GroupRandomHorizontalFlip(is_flow=False)])

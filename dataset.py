@@ -6,6 +6,7 @@ import os.path
 import numpy as np
 from numpy.random import randint
 
+
 class VideoRecord(object):
     def __init__(self, row):
         self._data = row
@@ -24,40 +25,26 @@ class VideoRecord(object):
 
 
 class TSNDataSet(data.Dataset):
-    def __init__(self, root_path, list_file,
-                 num_segments=3, new_length=1, modality='RGB',
-                 image_tmpl='img_{:05d}.jpg', transform=None,
-                 force_grayscale=False, random_shift=True, test_mode=False):
+    def __init__(self, root_path, list_file, num_segments=3, new_length=1, image_tmpl='img_{:05d}.jpg',
+                 transform=None, force_grayscale=False, random_shift=True, test_mode=False):
 
         self.root_path = root_path
         self.list_file = list_file
         self.num_segments = num_segments
         self.new_length = new_length
-        self.modality = modality
         self.image_tmpl = image_tmpl
         self.transform = transform
         self.random_shift = random_shift
         self.test_mode = test_mode
 
-        if self.modality == 'RGBDiff':
-            self.new_length += 1# Diff needs one more image to calculate diff
-
         self._parse_list()
 
     def _load_image(self, directory, idx):
-        if self.modality == 'RGB' or self.modality == 'RGBDiff':
-            try:
-                return [Image.open(os.path.join(self.root_path, directory, self.image_tmpl.format(idx))).convert('RGB')]
-            except Exception:
-                print('error loading image:', os.path.join(self.root_path, directory, self.image_tmpl.format(idx)))
-                return [Image.open(os.path.join(self.root_path, directory, self.image_tmpl.format(1))).convert('RGB')]
-        elif self.modality == 'Flow':
-            try:
-                idx_skip = 1 + (idx-1)*5
-                flow = Image.open(os.path.join(self.root_path, directory, self.image_tmpl.format(idx_skip))).convert('RGB')
-            except Exception:
-                print('error loading flow file:', os.path.join(self.root_path, directory, self.image_tmpl.format(idx_skip)))
-                flow = Image.open(os.path.join(self.root_path, directory, self.image_tmpl.format(1))).convert('RGB')
+        try:
+            return [Image.open(os.path.join(self.root_path, directory, self.image_tmpl.format(idx))).convert('RGB')]
+        except Exception:
+            print('error loading image:', os.path.join(self.root_path, directory, self.image_tmpl.format(idx)))
+            return [Image.open(os.path.join(self.root_path, directory, self.image_tmpl.format(1))).convert('RGB')]
             # the input flow file is RGB image with (flow_x, flow_y, blank) for each channel
             flow_x, flow_y, _ = flow.split()
             x_img = flow_x.convert('L')
@@ -79,7 +66,6 @@ class TSNDataSet(data.Dataset):
         :param record: VideoRecord
         :return: list
         """
-
         average_duration = (record.num_frames - self.new_length + 1) // self.num_segments
         if average_duration > 0:
             offsets = np.multiply(list(range(self.num_segments)), average_duration) + randint(average_duration, size=self.num_segments)
@@ -109,7 +95,6 @@ class TSNDataSet(data.Dataset):
         record = self.video_list[index]
         # check this is a legit video folder
         while not os.path.exists(os.path.join(self.root_path, record.path, self.image_tmpl.format(1))):
-            #print(os.path.join(self.root_path, record.path, self.image_tmpl.format(1)))
             index = np.random.randint(len(self.video_list))
             record = self.video_list[index]
 

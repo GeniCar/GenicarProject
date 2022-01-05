@@ -52,6 +52,7 @@ def write_total_dataset(videos, label):
         with open(total_file, "a") as file:
             file.write(f'{output_file} {end_frame} {label}\n')
 
+
 def split_dataset():
     file = open(total_file, "r")
     data = file.read().splitlines()
@@ -66,6 +67,7 @@ def split_dataset():
     #test_dataset = data[]
 
     return train_dataset, val_dataset
+
 
 def write_dataset(train_dataset, val_dataset):
     with open(train_file, "w+") as file:

@@ -1,18 +1,15 @@
 import argparse
 import time
 
+import datasets_video
 import numpy as np
 import torch.nn.parallel
 import torch.optim
-from sklearn.metrics import confusion_matrix
 from dataset import TSNDataSet
 from models import TSN
-from transforms import *
-from ops import ConsensusModule
-import datasets_video
-import pdb
+from sklearn.metrics import confusion_matrix
 from torch.nn import functional as F
-
+from transforms import *
 
 # options
 parser = argparse.ArgumentParser(
@@ -37,6 +34,7 @@ parser.add_argument('--softmax', type=int, default=0)
 
 args = parser.parse_args()
 
+
 class AverageMeter(object):
     """Computes and stores the average and current value"""
     def __init__(self):
@@ -54,6 +52,7 @@ class AverageMeter(object):
         self.count += n
         self.avg = self.sum / self.count
 
+
 def accuracy(output, target, topk=(1,)):
     """Computes the precision@k for the specified values of k"""
     maxk = max(topk)
@@ -67,9 +66,7 @@ def accuracy(output, target, topk=(1,)):
          res.append(correct_k.mul_(100.0 / batch_size))
     return res
 
-
-
-categories, args.train_list, args.val_list, args.root_path, prefix = datasets_video.return_dataset(args.dataset, args.modality)
+categories, args.train_list, args.val_list, args.root_path, prefix = datasets_video.return_dataset()
 num_class = len(categories)
 
 net = TSN(num_class, args.test_segments if args.crop_fusion_type in ['TRN','TRNmultiscale'] else 1, args.modality,
@@ -116,8 +113,6 @@ if args.gpus is not None:
 else:
     devices = list(range(args.workers))
 
-
-#net = torch.nn.DataParallel(net.cuda(devices[0]), device_ids=devices)
 net = torch.nn.DataParallel(net.cuda())
 net.eval()
 

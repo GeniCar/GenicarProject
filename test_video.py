@@ -1,23 +1,18 @@
-# test the pre-trained model on a single video
-# (working on it)
-# Bolei Zhou and Alex Andonian
-
-import os
-import re
-import cv2
 import argparse
 import functools
+import os
+import re
 import subprocess
-import numpy as np
-from PIL import Image
-import moviepy.editor as mpy
-from torch import nn
 
-import torchvision
-import torch.nn.parallel
+import cv2
+import moviepy.editor as mpy
+import numpy as np
 import torch.optim
-from models import TSN
+import torchvision
 import transforms
+from PIL import Image
+from models import TSN
+from torch import nn
 from torch.nn import functional as F
 
 
@@ -76,10 +71,7 @@ parser = argparse.ArgumentParser(description="test TRN on a single video")
 group = parser.add_mutually_exclusive_group(required=True)
 group.add_argument('--video_file', type=str, default=None)
 group.add_argument('--frame_folder', type=str, default=None)
-parser.add_argument('--modality', type=str, default='RGB',
-                    choices=['RGB'], )
-parser.add_argument('--dataset', type=str, default='moments',
-                    choices=['something','drive'])
+parser.add_argument('--num_segments', type=int, default=8)
 parser.add_argument('--rendered_output', type=str, default=None)
 parser.add_argument('--arch', type=str, default="BNInception")
 parser.add_argument('--input_size', type=int, default=224)
@@ -91,32 +83,21 @@ parser.add_argument('--weights', type=str)
 args = parser.parse_args()
 
 # Get dataset categories.
-categories_file = 'video_datasets/drive/category.txt'.format(args.dataset)
+categories_file = 'video_datasets/drive/category.txt'
 categories = [line.rstrip() for line in open(categories_file, 'r').readlines()]
 num_class = len(categories)
-
-#args.arch = 'InceptionV3' if args.dataset == 'moments' else 'resnet50'
 
 # Load model.
 net = TSN(num_class,
           args.test_segments,
-          args.modality,
           base_model=args.arch,
           consensus_type=args.consensus_type,
           img_feature_dim=args.img_feature_dim, print_spec=False)
 
-
-
 checkpoint = torch.load(args.weights)
 
-net.consensus.fc_fusion_scales[0][3] = nn.Linear(256, 3, bias=True)
-net.consensus.fc_fusion_scales[1][3] = nn.Linear(256, 3, bias=True)
-net.consensus.fc_fusion_scales[2][3] = nn.Linear(256, 3, bias=True)
-net.consensus.fc_fusion_scales[3][3] = nn.Linear(256, 3, bias=True)
-net.consensus.fc_fusion_scales[4][3] = nn.Linear(256, 3, bias=True)
-net.consensus.fc_fusion_scales[5][3] = nn.Linear(256, 3, bias=True)
-net.consensus.fc_fusion_scales[6][3] = nn.Linear(256, 3, bias=True)
-
+for i in range(args.num_segments - 1):
+    net.consensus.fc_fusion_scales[i][3] = nn.Linear(256, num_class, bias=True)
 
 base_dict = {'.'.join(k.split('.')[1:]): v for k, v in list(checkpoint['state_dict'].items())}
 net.load_state_dict(base_dict)
@@ -154,7 +135,8 @@ with torch.no_grad():
 # Output the prediction.
 video_name = args.frame_folder if args.frame_folder is not None else args.video_file
 print('RESULT ON ' + video_name)
-for i in range(0, 5):
+
+for i in range(0, min(5, num_class)):
     print('{:.3f} -> {}'.format(probs[i], categories[idx[i]]))
 
 # Render output frames with prediction text.

@@ -1,11 +1,11 @@
 import argparse
 parser = argparse.ArgumentParser(description="PyTorch implementation of Temporal Segment Networks")
-parser.add_argument('dataset', type=str, choices=['something','drive'])
-parser.add_argument('modality', type=str, choices=['RGB'])
 parser.add_argument('--train_list', type=str,default="")
 parser.add_argument('--val_list', type=str, default="")
 parser.add_argument('--root_path', type=str, default="")
 parser.add_argument('--store_name', type=str, default="")
+
+
 # ========================= Model Configs ==========================
 parser.add_argument('--arch', type=str, default="BNInception")
 parser.add_argument('--num_segments', type=int, default=3)
@@ -17,6 +17,7 @@ parser.add_argument('--dropout', '--do', default=0.8, type=float,
 parser.add_argument('--loss_type', type=str, default="nll",
                     choices=['nll'])
 parser.add_argument('--img_feature_dim', default=256, type=int, help="the feature dimension for each frame")
+
 
 # ========================= Learning Configs ==========================
 parser.add_argument('--epochs', default=120, type=int, metavar='N',            # 120
@@ -34,6 +35,7 @@ parser.add_argument('--weight-decay', '--wd', default=5e-4, type=float,
 parser.add_argument('--clip-gradient', '--gd', default=20, type=float,
                     metavar='W', help='gradient norm clipping (default: disabled)')
 parser.add_argument('--no_partialbn', '--npb', default=False, action="store_true")
+
 
 # ========================= Monitor Configs ==========================
 parser.add_argument('--print-freq', '-p', default=20, type=int,

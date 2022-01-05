@@ -15,7 +15,6 @@ class GroupRandomCrop(object):
             self.size = size
 
     def __call__(self, img_group):
-
         w, h = img_group[0].size
         th, tw = self.size
 
@@ -85,8 +84,8 @@ class GroupScale(object):
     interpolation: Default: PIL.Image.BILINEAR
     """
 
-    def __init__(self, size, interpolation=Image.BILINEAR):
-        self.worker = torchvision.transforms.Scale(size, interpolation)
+    def __init__(self, size, interpolation=torchvision.transforms.InterpolationMode.BILINEAR):
+        self.worker = torchvision.transforms.Resize(size, interpolation)
 
     def __call__(self, img_group):
         return [self.worker(img) for img in img_group]
@@ -130,7 +129,6 @@ class GroupOverSample(object):
 
 
 class GroupMultiScaleCrop(object):
-
     def __init__(self, input_size, scales=None, max_distort=1, fix_crop=True, more_fix_crop=True):
         self.scales = scales if scales is not None else [1, 875, .75, .66]
         self.max_distort = max_distort
@@ -140,7 +138,6 @@ class GroupMultiScaleCrop(object):
         self.interpolation = Image.BILINEAR
 
     def __call__(self, img_group):
-
         im_size = img_group[0].size
 
         crop_w, crop_h, offset_w, offset_h = self._sample_crop_size(im_size)
@@ -251,7 +248,6 @@ class GroupRandomSizedCrop(object):
 
 
 class Stack(object):
-
     def __init__(self, roll=False):
         self.roll = roll
 

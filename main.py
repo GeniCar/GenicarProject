@@ -1,54 +1,43 @@
-import argparse
 import os
-import time
 import shutil
-import torch
-import torchvision
-from torch import nn
-import torch.nn.parallel
-import torch.backends.cudnn as cudnn
-import torch.optim
-from torch.nn.utils import clip_grad_norm_
+import time
 
-
+import datasets_video
 import matplotlib.pyplot as plt
+import torch
+import torch.backends.cudnn as cudnn
+import torch.nn.parallel
+import torch.optim
+import torchvision
 from dataset import TSNDataSet
 from models import TSN
-from transforms import *
 from opts import parser
-import datasets_video
-
-
-
+from torch import nn
+from torch.nn.utils import clip_grad_norm_
+from transforms import *
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 device
 
 best_prec1 = 0
 
+
 def main():
     global args, best_prec1
     args = parser.parse_args()
     check_rootfolders()
 
-    categories, args.train_list, args.val_list, args.root_path, prefix = datasets_video.return_dataset(args.dataset, args.modality)
+    categories, args.train_list, args.val_list, args.root_path, prefix = datasets_video.return_dataset()
 
-    
-
-   
-    args.store_name = '_'.join(['TRN', args.dataset, args.modality, args.arch, args.consensus_type, 'segment%d'% args.num_segments])
+    args.store_name = '_'.join(['TRN', args.arch, args.consensus_type, 'segment%d'% args.num_segments])
     print('storing name: ' + args.store_name)
 
-
     # use pretrain model num_class = pre train class
-    if args.arch =='BNInception':
-        num_class = 174
-    else:
-        num_class = len(categories)
-    print(num_class)
-    
-    # import model TSN(CNN+MLP)+ TRN_module (if consensus_type ="TRNmultiscale"or TRN)
-    model = TSN(num_class, args.num_segments, args.modality,
+    pre_trained_num_class = 174
+    num_class = len(categories)
+
+    # import model TSN(CNN+MLP) + TRN_module (if consensus_type ="TRNmultiscale"or TRN)
+    model = TSN(pre_trained_num_class, args.num_segments,
                 base_model=args.arch,
                 consensus_type=args.consensus_type,
                 dropout=args.dropout,
@@ -63,14 +52,9 @@ def main():
             model.load_state_dict(base_dict)
         else: 
             raise ValueError("Pretrain_model is only segments 8")
-            
-        
-    for i in range(args.num_segments-1):
-        model.consensus.fc_fusion_scales[i][3] = nn.Linear(256, 3, bias=True)
 
-    print(model)
-    
-    
+    for i in range(args.num_segments-1):
+        model.consensus.fc_fusion_scales[i][3] = nn.Linear(256, num_class, bias=True)
 
     crop_size = model.crop_size
     scale_size = model.scale_size
@@ -96,20 +80,12 @@ def main():
     cudnn.benchmark = True
 
     # Data loading code
-    if args.modality != 'RGBDiff':
-        normalize = GroupNormalize(input_mean, input_std)
-    else:
-        normalize = IdentityTransform()
-
-    if args.modality == 'RGB':
-        data_length = 1
-    elif args.modality in ['Flow', 'RGBDiff']:
-        data_length = 5
+    normalize = GroupNormalize(input_mean, input_std)
+    data_length = 1
 
     train_loader = torch.utils.data.DataLoader(
         TSNDataSet(args.root_path, args.train_list, num_segments=args.num_segments,
                    new_length=data_length,
-                   modality=args.modality,
                    image_tmpl=prefix,
                    transform=torchvision.transforms.Compose([
                        train_augmentation,
@@ -123,7 +99,6 @@ def main():
     val_loader = torch.utils.data.DataLoader(
         TSNDataSet(args.root_path, args.val_list, num_segments=args.num_segments,
                    new_length=data_length,
-                   modality=args.modality,
                    image_tmpl=prefix,
                    random_shift=False,
                    transform=torchvision.transforms.Compose([
@@ -135,9 +110,6 @@ def main():
                    ])),
         batch_size=args.batch_size, shuffle=False,
         num_workers=2, pin_memory=True)
-
-
-    
 
     # define loss function (criterion) and optimizer
     if args.loss_type == 'nll':
@@ -166,7 +138,6 @@ def main():
     for epoch in range(args.start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch, args.lr_steps)
 
-        
         # import def train
         train_loss, train_acc= train(train_loader, model, criterion, optimizer, epoch, log_training)
         
@@ -179,17 +150,12 @@ def main():
         # down code is print validate result 5 epoch interval
         # if (epoch + 1) % args.eval_freq == 0 or epoch == args.epochs - 1:
 
-        val_loss,prec1 = validate(val_loader, model, criterion, (epoch + 1) * len(train_loader), log_training)
-
-
+        val_loss, prec1 = validate(val_loader, model, criterion, (epoch + 1) * len(train_loader), log_training)
         val_loss = val_loss.to('cpu').numpy()
         val_acc = prec1.to('cpu').numpy()
                 
         history["val_loss"].append(val_loss)
         history["val_acc"].append(val_acc)
-                
-
-
 
         # remember best prec@1 and save checkpoint
         is_best = prec1 > best_prec1
@@ -201,7 +167,6 @@ def main():
             'best_prec1': best_prec1,
             }, is_best)
 
-
     # show dataset learning curve
     plot_history(history,args.arch)
 
@@ -211,7 +176,6 @@ def train(train_loader, model, criterion, optimizer, epoch, log):
     data_time = AverageMeter()
     losses = AverageMeter()
     top1 = AverageMeter()
-    #top5 = AverageMeter()
 
     if args.no_partialbn:
         model.module.partialBN(False)
@@ -226,7 +190,7 @@ def train(train_loader, model, criterion, optimizer, epoch, log):
         # measure data loading time
         data_time.update(time.time() - end)
 
-        target = target.to(device)                                  # async=True
+        target = target.to(device) # async=True
         input_var = torch.autograd.Variable(input)
         target_var = torch.autograd.Variable(target)
 
@@ -238,8 +202,6 @@ def train(train_loader, model, criterion, optimizer, epoch, log):
         prec1 = accuracy(output.data, target, topk=(1,))
         losses.update(loss.data, input.size(0))
         top1.update(prec1[0], input.size(0))
-        #top5.update(prec5[0], input.size(0))
-
 
         # compute gradient and do SGD step
         optimizer.zero_grad()
@@ -257,14 +219,12 @@ def train(train_loader, model, criterion, optimizer, epoch, log):
         batch_time.update(time.time() - end)
         end = time.time()
 
-
         # output
         if i % args.print_freq == 0:
             output = ('Epoch: [{0}][{1}/{2}], lr: {lr:.5f}\t'
-                    'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
-                    'Data {data_time.val:.3f} ({data_time.avg:.3f})\t'
-                    'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
-                    'Prec@1 {top1.val:.3f} ({top1.avg:.3f})'.format(
+                      'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
+                      'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
+                      'Prec@1 {top1.val:.3f} ({top1.avg:.3f})'.format(
                         epoch, i, len(train_loader), batch_time=batch_time,
                         data_time=data_time, loss=losses, top1=top1, lr=optimizer.param_groups[-1]['lr']))
 
@@ -273,17 +233,12 @@ def train(train_loader, model, criterion, optimizer, epoch, log):
             log.flush()
 
             return losses.avg, top1.avg
-            #print(output)
-            #log.write(output + '\n')
-            #log.flush()
-
 
 
 def validate(val_loader, model, criterion, iter, log):
     batch_time = AverageMeter()
     losses = AverageMeter()
     top1 = AverageMeter()
-    # top5 = AverageMeter()
 
     # switch to evaluate mode
     model.eval()
@@ -304,7 +259,6 @@ def validate(val_loader, model, criterion, iter, log):
 
             losses.update(loss.data, input.size(0))
             top1.update(prec1[0], input.size(0))
-            
 
             # measure elapsed time
             batch_time.update(time.time() - end)
@@ -313,11 +267,10 @@ def validate(val_loader, model, criterion, iter, log):
             # print_freq default = 20
             if i % args.print_freq == 0:
                 output = ('Test: [{0}/{1}]\t'
-                      'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
-                      'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
-                      'Prec@1 {top1.val:.3f} ({top1.avg:.3f})'.format(
-                       i, len(val_loader), batch_time=batch_time, loss=losses,
-                       top1=top1))#, top5=top5))
+                          'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
+                          'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
+                          'Prec@1 {top1.val:.3f} ({top1.avg:.3f})'.format(i, len(val_loader),  batch_time=batch_time,
+                                                                          loss=losses, top1=top1))
                 print(output)
                 log.write(output + '\n')
                 log.flush()
@@ -333,9 +286,6 @@ def validate(val_loader, model, criterion, iter, log):
 
 
 def plot_history(history,base_model):
-
-    #history["train_loss"].append(train_loss)
-    #history["train_acc"].append(train_acc)
     fig = plt.figure(figsize=(10, 5))
 
     ax = fig.add_subplot(1, 2, 1)
@@ -360,6 +310,7 @@ def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):
     torch.save(state, '%s/%s_checkpoint.pth.tar' % (args.root_model, args.store_name))
     if is_best:
         shutil.copyfile('%s/%s_checkpoint.pth.tar' % (args.root_model, args.store_name),'%s/%s_best.pth.tar' % (args.root_model, args.store_name))
+
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""
@@ -405,6 +356,7 @@ def accuracy(output, target, topk=(1,)):
 
     return res
 
+
 def check_rootfolders():
     """Create log and model folder"""
     folders_util = [args.root_log, args.root_model, args.root_output]
@@ -416,6 +368,4 @@ def check_rootfolders():
 
 if __name__ == '__main__':
     main()
-
-# %%
 
