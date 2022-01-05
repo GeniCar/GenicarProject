@@ -22,6 +22,7 @@
 ![가까워짐](https://user-images.githubusercontent.com/60677948/148158045-b6bc6a92-74d2-48ad-bb49-0a502acbd75e.gif)
 
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/60677948/148159024-59af7513-7204-4801-9728-5c70a300277f.gif)
 
 
 
