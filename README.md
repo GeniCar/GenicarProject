@@ -17,6 +17,9 @@
 이러한 보조 역할을 하기 위해 저희는 연속적인 이미지 프레임을 입력으로 받아 프레임간의 관계를 추론하여 전체적인 상황을 이해할 수 있는 모델을 사용하였습니다. 프로젝트에 활용한 모델은 [Temporal Relational Reasoning in Videos](https://arxiv.org/pdf/1711.08496.pdf)에서 제안된 모델로 동영상을 입력받아 상황을 이해하는 모델입니다.
 
 
+![가까이](https://user-images.githubusercontent.com/60677948/148155057-872dc3bf-2cd2-43fb-bf37-faef3952e3d4.gif)
+
+
 
 
 본 프로젝트를 통한 저희의 기여점은 다음과 같습니다.
