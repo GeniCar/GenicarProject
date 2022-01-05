@@ -16,6 +16,12 @@
 
 |![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148161174-037957ac-d0c6-4628-a894-10bf98156928.gif)|![멀어짐 동영상](https://user-images.githubusercontent.com/60677948/148161556-2aa00c12-c08b-49ed-8942-8d1a8a8d22e3.gif)|
 |:-:|:-:|
+
+
+### 3. 사고
+|![사고](https://user-images.githubusercontent.com/60677948/148162001-56494f6d-5dd9-437d-bcad-1064090ad776.gif)|![사고동영상](https://user-images.githubusercontent.com/60677948/148162040-31830ba6-f331-4b77-b2ed-e2b7773bdbb8.gif)
+|:-:|:-:|
+
 <br/>
 
 
