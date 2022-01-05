@@ -19,9 +19,12 @@
 
 
 
-|![](https://user-images.githubusercontent.com/60677948/148156847-e3501bb7-b4f9-4722-b163-1d0eec0ee73e.gif)|
+|![가까워짐](https://user-images.githubusercontent.com/60677948/148156847-e3501bb7-b4f9-4722-b163-1d0eec0ee73e.gif)|
+|![멀어짐](https://user-images.githubusercontent.com/29950822/147997077-d665e47f-7838-4239-845a-967d1d62074c.gif)|
 |:-:|:-:|
 |![가까이코드](https://user-images.githubusercontent.com/60677948/148157203-d5cdbd12-49e7-437c-ba0b-3a571e55eec4.gif)|
+|![가까이코드](https://user-images.githubusercontent.com/60677948/148157203-d5cdbd12-49e7-437c-ba0b-3a571e55eec4.gif)|
+
 
 
 
