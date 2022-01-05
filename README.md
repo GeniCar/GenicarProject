@@ -15,7 +15,7 @@
 
 
 |![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148161174-037957ac-d0c6-4628-a894-10bf98156928.gif)|![멀어짐 동영상](https://user-images.githubusercontent.com/60677948/148161556-2aa00c12-c08b-49ed-8942-8d1a8a8d22e3.gif)|
-
+|:-:|:-:|
 <br/>
 
 
