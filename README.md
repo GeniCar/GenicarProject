@@ -109,6 +109,54 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 ## 실험 결과
 
+### 1. 이진분류(가까워짐 멀어짐)
+
+  
+|BNInception![BNInception](https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_BNInception.png)|ResNet18![ResNet18](https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_resnet18.png)|
+|:-:|:-:|
+
+|ResNet50![ResNet50](https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_resnet50.png)|ResNet101![ResNet101](https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_resnet101.png)|
+|:-:|:-:|
+
+처음 이진분류를 적용한 결과 loss 값이 거의 제로에 가깝게 나타났고 정확도는 resnet18을 제외하고는 100%에 가깝게 나타났다는 것을 알 수 있었습니다. 
+결과적인 성능이 좋게 나와서 추가적인 분류를 해보고자 사고 데이터를 추가하여 다중분류를 시도해 보았습니다.
+
+<br/>
+
+### 2. 첫번째 다중분류(가까워짐, 멀어짐, 사고발생여부)
+
+
+|BNInception![BNInception](https://github.com/GeniCar/GenicarProject/blob/main/plots/second_BNInception__noise_data196.png)|ResNet101![ResNet101](https://github.com/GeniCar/GenicarProject/blob/main/plots/second_resnet101__noise_data196.png)|
+|:-:|:-:|
+
+첫번째 다중분류 결과는 생각과 다르게 정확도와 loss측면에서 만족스러운 성과를 얻지 못하였고, 이 문제에 대한 원인으로 확보한 데이터의 부족, 혹은 확보한 데이터 속 노이즈 존재에 따른 결과라고 생각하여 우선적으로 부족한 데이터를 더 추가하여 두번째 다중분류를 시도하였습니다.
+
+<br/>
+
+### 3. 두번째 다중분류(가까워짐, 멀어짐, 사고발생여부) _ 데이터 추가
+
+
+|BNInception(data-384)![BNInception](https://github.com/GeniCar/GenicarProject/blob/main/plots/third_model_BNInception_data384.png)|BNInception(data-466)![BNInception](https://github.com/GeniCar/GenicarProject/blob/main/plots/third_model_BNInception_data466.png)|
+|:-:|:-:|
+
+|ResNet101(data-384)![ResNet101](https://github.com/GeniCar/GenicarProject/blob/main/plots/third_resnet101_data384.png)|ResNet101(data-466)![ResNet101](https://github.com/GeniCar/GenicarProject/blob/main/plots/third_resnet101_data466.png)|
+|:-:|:-:|
+
+두번째 다중분류를 수행한 결과 정확도와 로스값의 변화는 거의 없거나, 오히려 그 값이 소폭 줄어들었음을 알 수 있었습니다. 이를 해결하기 위해, 앞서 말했던 노이즈 문제를 생각했고, 이 점을 해결한 뒤 다시 모델을 작동시켜 그 결과를 확인해 보았습니다. 
+
+<br/>
+
+### 4. 세번째 다중분류(가까워짐, 멀어짐, 사고발생여부) _ 노이즈 제거
+
+
+|BNInception(remove_noise)![BNInception](https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_BNInception_data180.png)|ResNet50(remove_noise)![ResNet50](https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_resnet50_data196_removenoise.png)|ResNet101(remove_noise)![ResNet101](https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_resnet101_remove_noise_data180.png)|
+|:-:|:-:|:-:|
+
+세번째 다중분류를 수행한 결과 정확도는 80%이상의 값을 BNInception와 ResNet101에서 보였음 확인할 수 있었고, loss값은 0.5 이하의 값을 가진다는 것을 확인할 수 있었습니다. 
+
+
+작은 배치 사이즈를 사용하였고, 직접 수집한 데이터로 인해 발생한 에러 상황을 해결하기 위해 노이즈 제거를 하여 충분히 보완하여 나온 값으로, 결과적으로 모델의 성능이 크게 뒤떨어지지 않았다는 것을 볼 수 있었습니다. 세번째 다중분류의 결과로 resnet50(정확도와 loss값이 만족스럽지 않은)이 아닌 모델을 선택하여, 더 많은 데이터 수집과 데이터의 노이즈가 확실히 제거된다면 모델의 성능이 더 향상될 수 있다고 판단 할 수 있었습니다.. 
+
 <br/>
 
 ## 향후 연구
