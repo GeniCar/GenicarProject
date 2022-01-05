@@ -14,7 +14,8 @@
 ### 2. 멀어짐
 
 
-|![멀어짐동영상](https://user-images.githubusercontent.com/60677948/148161174-037957ac-d0c6-4628-a894-10bf98156928.gif)|![멀어짐 동영상](https://user-images.githubusercontent.com/60677948/148161556-2aa00c12-c08b-49ed-8942-8d1a8a8d22e3.gif)
+|![멀어짐 동ㅇ영](https://user-images.githubusercontent.com/60677948/148167658-14242e2a-fc0f-48fd-9da0-cd5d8445aa3e.gif)|
+![fin멀어짐](https://user-images.githubusercontent.com/60677948/148167680-58a2ba9d-dad7-400c-b8f4-2619348f7597.gif)|
 |:-:|:-:|
 
 
