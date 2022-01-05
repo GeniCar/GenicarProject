@@ -19,8 +19,9 @@
 
 
 ### 3. 사고
-|![사고](https://user-images.githubusercontent.com/60677948/148162001-56494f6d-5dd9-437d-bcad-1064090ad776.gif)|![사고동영상](https://user-images.githubusercontent.com/60677948/148162040-31830ba6-f331-4b77-b2ed-e2b7773bdbb8.gif)|
+|![사고](https://user-images.githubusercontent.com/60677948/148162001-56494f6d-5dd9-437d-bcad-1064090ad776.gif)|![ezgif com-gif-maker](https://user-images.githubusercontent.com/60677948/148162458-273eb1df-3d11-4c58-b686-8a9c22064548.gif)|
 |:-:|:-:|
+
 
 <br/>
 
