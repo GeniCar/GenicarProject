@@ -122,7 +122,9 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 #### 1차 실험
   - Dataset
+    
     v 1.0.0의 주간 가까워짐/멀어짐 data
+    
     총 개수 : 68
 
 
