@@ -118,9 +118,8 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 ## 실험 결과
 
-### 실험 point
 
-#### 1. 1차 실험 (이진분류)
+### 1. 1차 실험 (이진분류)
   - Dataset
     
     - v 1.0.0의 주간 가까워짐/멀어짐 data
@@ -138,7 +137,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
     - IOT에 반영하기 위한 가벼운 model 
 
 
-### 1차 실험 (2개 클래스 가까워짐 / 멀어짐)
+
 
 |BNInception|ResNet18|
 |:-:|:-:|
