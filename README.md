@@ -263,6 +263,12 @@ drop_out = 0.8
 
     - 최종 실험 결과물
 
+  
+
+|BNInception|ResNet101|
+|:-:|:-:|
+|<img src = "https://user-images.githubusercontent.com/60677948/148338690-29c5b91f-b2b7-4c83-8f46-40943781a320.png" width="500" height="280">|<img src = "https://user-images.githubusercontent.com/60677948/148338847-fe1eda0e-2c21-4fb0-aa17-39568e1d1fe5.png" width="500" height="280">|
+
 
 ### 연구 개선 방향
 
@@ -271,11 +277,6 @@ drop_out = 0.8
   - 컴퓨팅 자원이 충분하다면 Batch_size 8 이상으로 늘려서 모델 수렴에 도움
 
   - 노이즈 데이터를 자동으로 줄일 수 있는 방법 제시
-  
-
-|BNInception|ResNet101|
-|:-:|:-:|
-|<img src = "https://user-images.githubusercontent.com/60677948/148338690-29c5b91f-b2b7-4c83-8f46-40943781a320.png" width="500" height="280">|<img src = "https://user-images.githubusercontent.com/60677948/148338847-fe1eda0e-2c21-4fb0-aa17-39568e1d1fe5.png" width="500" height="280">|
 
 
 
