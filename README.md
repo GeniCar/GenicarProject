@@ -76,7 +76,7 @@
 - 전방 차량과의 거리 멀어짐
 - (new) 전방 사고 발생
 
-|![가까워짐 (야간)](https://user-images.githubusercontent.com/29950822/147997799-59063bf1-887c-4ac9-a33b-8ca45fd4ac6c.gif)|
+|![tacc](https://user-images.githubusercontent.com/60677948/148338522-3d6dc80c-cdff-45f9-9a32-846a9dcb9daf.gif)|
 |:-:|
 |사고 발생|
 <br/><br/>
