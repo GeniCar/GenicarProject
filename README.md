@@ -116,7 +116,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 
 
-## 실험 결과
+## 실험 방법 및 결과
 
 
 ### 1차 실험 (이진분류)
@@ -216,25 +216,56 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
     - 데이터 확인 한 결과 데이터에 불량 데이터가 다수 발견 -> 불량 데이터 제거 
 
-    - 사고 데이터의 경우 (내 차가 사고 난 영상 + 다른차가 사고난 영상) 존재 -> 일단 다른차가 사고난 영상만 훈련에 사용 그 후 내 차가 사고 난 영상만     
+    - 사고 데이터의 경우 (내 차가 사고 난 영상 + 다른차가 사고난 영상) 존재 -> 일단 다른차가 사고난 영상만 훈련에 사용 그 후 내 차가 사고 난 영상만 사용     
 
 
 |BNInception|ResNet101|
 |:-:|:-:|
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/third_model_BNInception_data384.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/third_resnet101_data384.png" width="500" height="280">|
 
-데이터를 추가하여도 여전히 성능 개선에 도움이 되지 않아 학습에 사용한 데이터를 다시 확인한 결과 데이터에 노이즈가 많이 발견되었고 노이즈가 있는 데이터를 모두 제거한 뒤 다시 실험을 진행했습니다.
+
 <br/><br/>
 
-### 4차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 60개의 데이터)
+### 4차 실험 (노이즈 데이터 제외 및 사고 데이터 재정의)
+  - Dataset
+    
+    - 3차 실험에서 노이즈 데이터 제외 및 사고 데이터 재정의
+    
+    - 다른차가 사고난 영상만 훈련에 사용 데이터 개수: 180
+
+    - 내 차가 사고 난 영상: 226
+  
+  - Model 
+  
+    - BNInception, Resnet101
+
+  - 실험 반영점
+
+    - 노이즈 데이터 제외 및 사고 데이터 재정의 
+   
+    - 모델과 학습 파라미터 경우 2차 실험과 동일
+
+  
+  - 결과 및 개선방향 논의점
+
+    - 아래의 결과 그래프는 내 차가 사고 난 영상 결과/ 다른차가 사고난 영상 결과는 3차 실험과 비슷한 
+  
+    - 두 모델 다 accuracy: 90% 내외 Loss: 0.4 내외
+    
+    - 2,3차 실험 대비 성능개선
+
+    - 최종 실험 결과물
+  
 
 |BNInception|ResNet101|
 |:-:|:-:|
 |<img src = "https://user-images.githubusercontent.com/60677948/148338690-29c5b91f-b2b7-4c83-8f46-40943781a320.png" width="500" height="280">|<img src = "https://user-images.githubusercontent.com/60677948/148338847-fe1eda0e-2c21-4fb0-aa17-39568e1d1fe5.png" width="500" height="280">|
 
-데이터에서 노이즈를 제거한 뒤 전체적으로 모델의 정확도가 80% 이상의 성능을 보여주고 있습니다. 하지만 여전히 학습에 사용된 데이터가 부족하며 모델 학습에 Google Colab을 사용하여 충분한 배치 사이즈로 학습이 불가능하는 등의 개선 가능한 문제점들이 존재합니다.
 
-1 ~ 4차의 실험 종합적으로 판단하여 제안하는 아이디어에 대한 실용성이 충분하다는 결론을 내렸습니다.
+
+### 실험에서 아쉬운 점
+
+
 <br/><br/>
 
 
