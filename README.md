@@ -144,9 +144,9 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 ### 4차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 60개의 데이터)
 
-|BNInception|ResNet50|ResNet101|
-|:-:|:-:|:-:|
-|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_BNInception_data180.png" width="500" height="200">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_resnet50_data196_removenoise.png" width="500" height="200">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_resnet101_remove_noise_data180.png" width="500" height="200">|
+|BNInception|ResNet101|
+|:-:|:-:|
+|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_BNInception_data180.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_resnet101_remove_noise_data180.png" width="500" height="280">|
 
 데이터에서 노이즈를 제거한 뒤 전체적으로 모델의 정확도가 80% 이상의 성능을 보여주고 있습니다. 하지만 여전히 학습에 사용된 데이터가 부족하며 모델 학습에 Google Colab을 사용하여 충분한 배치 사이즈로 학습이 불가능하는 등의 개선 가능한 문제점들이 존재합니다.
 
