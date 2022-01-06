@@ -248,7 +248,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
   
   - 결과 및 개선방향 논의점
 
-    - 아래의 결과 그래프는 내 차가 사고 난 영상 결과/ 다른차가 사고난 영상 결과는 3차 실험과 비슷한 
+    - 아래의 결과 그래프는 내 차가 사고 난 영상 결과/ 다른차가 사고난 영상 결과는 3차 실험과 비슷함 
   
     - 두 모델 다 accuracy: 90% 내외 Loss: 0.4 내외
     
