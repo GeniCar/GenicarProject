@@ -119,7 +119,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 ## 실험 결과
 
 
-### 1. 1차 실험 (이진분류)
+### 1차 실험 (이진분류)
   - Dataset
     
     - v 1.0.0의 주간 가까워짐/멀어짐 data
@@ -128,7 +128,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
   
   - Model 
   
-    - BNInception,ResNet18, Resnet50, Resnet101
+    - BNInception, ResNet18, Resnet50, Resnet101
 
   - 실험 반영점
 
@@ -157,7 +157,30 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 <br/><br/>
 
-### 2차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 70개의 데이터)
+### 2차 실험 (사고 클래스 레이블 추가)
+  - Dataset
+    
+    - v 2.0.0의 주간 및 야간 가까워짐/멀어짐, 사고
+    
+    - 총 개수 : 196
+
+    - 노이즈 데이터(인코딩 및 영상불량) 제거하지 않음
+  
+  - Model 
+  
+    - BNInception, Resnet101
+
+  - 실험 반영점
+
+    - 사고 레이블 데이터 추가
+   
+    - 사고 레이블을 추가하면서 Resnet18,50은 학습 결과가 좋지 않아  
+  
+  - 결과 및 개선점
+  
+    - 4개의 모델에서 accuracy: 90% 이상 Loss : 0 에 수렴
+    
+    - 정확도와 Loss의 결과가 좋게 나왔지만 학습 수렴 곡선이 일정하지  
 
 |BNInception|ResNet101|
 |:-:|:-:|
