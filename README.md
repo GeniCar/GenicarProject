@@ -160,7 +160,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 ### 2차 실험 (사고 클래스 레이블 추가)
   - Dataset
     
-    - v 2.0.0의 주간 및 야간 가까워짐/멀어짐, 사고
+    - v 2.0.0의 주간 및 야간 가까워짐/멀어짐, 사고 (사고 데이터의 경우 내 차가 사고 난 영상 + 다른차가 사고난 영상)
     
     - 총 개수 : 196
 
@@ -182,16 +182,40 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
     
     - 이진분류보다 accuracy -10%, Loss +0.5
 
-    - Data가 부족하다고 생각, 각 레이블당 최소  
+    - Data가 부족하다고 생각, 각 레이블당 최소 100개 이상 필요  
 
 |BNInception|ResNet101|
 |:-:|:-:|
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/second_BNInception__noise_data196.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/second_resnet101__noise_data196.png" width="500" height="280">|
 
-새로운 클래스 '사고발생'을 추가하여 학습된 모델은 만족스러운 성과를 얻지 못하였고, 문제의 원인을 데이터의 부족으로 판단하여 데이터를 더 추가하여 다시 실험을 진행했습니다.
+
 <br/><br/>
 
-### 3차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 130개의 데이터)
+### 3차 실험 (클래스 레이블당 130개의 데이터)
+  - Dataset
+    
+    - 2차 실험과 동일
+    
+    - 총 개수 : 390
+  
+  - Model 
+  
+    - BNInception, Resnet101
+
+  - 실험 반영점
+
+    - 사고 레이블 데이터 추가
+   
+    - 사고 레이블을 추가하면서 Resnet18,50은 학습 결과가 좋지 않아 제외 
+  
+  - 결과 및 개선방향 논의점
+  
+    - accuracy: 80% 이하 Loss : 0.5 이상  
+    
+    - 이진분류보다 accuracy -10%, Loss +0.5
+
+    - Data가 부족하다고 생각, 각 레이블당 최소 100개 이상 필요  
+
 
 |BNInception|ResNet101|
 |:-:|:-:|
