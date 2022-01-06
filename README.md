@@ -121,7 +121,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 ### 실험 point
 
 
-#### 1차 실험 (2개 클래스 가까워짐 / 멀어짐)
+### 1차 실험 (2개 클래스 가까워짐 / 멀어짐)
 
 |BNInception|ResNet18|
 |:-:|:-:|
@@ -136,7 +136,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 첫번째 실험 결과를 바탕으로 새로운 클래스를 추가하여 실험을 진행하였습니다.
 <br/><br/>
 
-#### 2차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 70개의 데이터)
+### 2차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 70개의 데이터)
 
 |BNInception|ResNet101|
 |:-:|:-:|
@@ -145,7 +145,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 새로운 클래스 '사고발생'을 추가하여 학습된 모델은 만족스러운 성과를 얻지 못하였고, 문제의 원인을 데이터의 부족으로 판단하여 데이터를 더 추가하여 다시 실험을 진행했습니다.
 <br/><br/>
 
-#### 3차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 130개의 데이터)
+### 3차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 130개의 데이터)
 
 |BNInception|ResNet101|
 |:-:|:-:|
@@ -154,7 +154,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 데이터를 추가하여도 여전히 성능 개선에 도움이 되지 않아 학습에 사용한 데이터를 다시 확인한 결과 데이터에 노이즈가 많이 발견되었고 노이즈가 있는 데이터를 모두 제거한 뒤 다시 실험을 진행했습니다.
 <br/><br/>
 
-#### 4차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 60개의 데이터)
+### 4차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 60개의 데이터)
 
 |BNInception|ResNet101|
 |:-:|:-:|
