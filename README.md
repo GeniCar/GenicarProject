@@ -132,13 +132,15 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
   - 실험 반영점
 
-    - 기존 논문에서 학습한 pre-train model인 BNInception과 그 외의 pre-train CNN model 비교
+    - 기존 논문에서 학습한 pre-train 모델인 BNInception과 그 외의 pre-train CNN 모델 비교
    
-    - IOT에 반영하기 위한 가벼운 model 탐색
+    - IOT에 반영하기 위한 가벼운 모델 탐색
   
-  - 결과
+  - 결과 및 개선점
   
-    - 
+    - 4개의 모델에서 accuracy: 90% 이상 Loss : 0 에 수렴
+    
+    - 정확도와 Loss의 결과가 좋게 나왔지만 학습 수렴 곡선이 일정하지  
 
 
 
