@@ -162,6 +162,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 <br/><br/>
 
 
+<img src = "https://user-images.githubusercontent.com/60677948/148338690-29c5b91f-b2b7-4c83-8f46-40943781a320.png" width="500" height="280">
 
 ## 향후 연구
 - 실제 서비스로 활용되기 위한 실시간성 고려
