@@ -122,7 +122,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 ### 1차 실험 (이진분류)
   - Dataset
     
-    - v 1.0.0의 주간 가까워짐/멀어짐 data
+    - v 1.0.0의 주간 가까워짐/멀어짐 
     
     - 총 개수 : 68
   
@@ -136,7 +136,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
    
     - IOT에 반영하기 위한 가벼운 모델 탐색
   
-  - 결과 및 개선점
+  - 결과 및 개선방향 논의점
   
     - 4개의 모델에서 accuracy: 90% 이상 Loss : 0 에 수렴
     
@@ -174,13 +174,15 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
     - 사고 레이블 데이터 추가
    
-    - 사고 레이블을 추가하면서 Resnet18,50은 학습 결과가 좋지 않아  
+    - 사고 레이블을 추가하면서 Resnet18,50은 학습 결과가 좋지 않아 제외 
   
-  - 결과 및 개선점
+  - 결과 및 개선방향 논의점
   
-    - 4개의 모델에서 accuracy: 90% 이상 Loss : 0 에 수렴
+    - accuracy: 80% 이하 Loss : 0.5 이상  
     
-    - 정확도와 Loss의 결과가 좋게 나왔지만 학습 수렴 곡선이 일정하지  
+    - 이진분류보다 accuracy -10%, Loss +0.5
+
+    - Data가 부족하다고 생각, 각 레이블당 최소  
 
 |BNInception|ResNet101|
 |:-:|:-:|
