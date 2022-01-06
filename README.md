@@ -87,7 +87,6 @@
 ## 모델 구조
 
 <br/><br/>
-![image](https://user-images.githubusercontent.com/26339800/148342244-2a7e16ae-fa10-4434-8eeb-6c2d6596ec57.png)
 
 
 
@@ -129,13 +128,17 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
   
   - Model 
   
-    - ResNet18, Resnet50, Resnet101, BNInception
+    - BNInception,ResNet18, Resnet50, Resnet101
 
   - 실험 반영점
 
     - 기존 논문에서 학습한 pre-train model인 BNInception과 그 외의 pre-train CNN model 비교
    
-    - IOT에 반영하기 위한 가벼운 model 
+    - IOT에 반영하기 위한 가벼운 model 탐색
+  
+  - 결과
+  
+    - 
 
 
 
@@ -149,8 +152,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_resnet50.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_resnet101.png" width="500" height="280">|
 
 
-처음 데이터 v 1.0.0을 활용하여 모델을 학습한 결과 loss 값이 감소하고 모델의 정확도 또한 100%에 가깝게 나타나는 것을 확인했습니다. 
-첫번째 실험 결과를 바탕으로 새로운 클래스를 추가하여 실험을 진행하였습니다.
+
 <br/><br/>
 
 ### 2차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 70개의 데이터)
