@@ -118,6 +118,13 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 ## 실험 방법 및 결과
 
+### 모델 최적의 파라미터
+```
+num_segment = 8
+learning_rate = 0.001 
+batch_size = 8
+drop_out = 0.8
+```
 
 ### 1차 실험 (이진분류)
   - Dataset
@@ -263,7 +270,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 
 
-### 실험에서 아쉬운 점
+
 
 
 <br/><br/>
