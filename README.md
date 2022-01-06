@@ -154,7 +154,8 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 |BNInception|ResNet101|
 |:-:|:-:|
-|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_BNInception_data180.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/fourth_resnet101_remove_noise_data180.png" width="500" height="280">|
+|<img src = "https://user-images.githubusercontent.com/60677948/148338690-29c5b91f-b2b7-4c83-8f46-40943781a320.png" width="500" height="280">
+|<img src = "https://user-images.githubusercontent.com/60677948/148338847-fe1eda0e-2c21-4fb0-aa17-39568e1d1fe5.png" width="500" height="280">|
 
 데이터에서 노이즈를 제거한 뒤 전체적으로 모델의 정확도가 80% 이상의 성능을 보여주고 있습니다. 하지만 여전히 학습에 사용된 데이터가 부족하며 모델 학습에 Google Colab을 사용하여 충분한 배치 사이즈로 학습이 불가능하는 등의 개선 가능한 문제점들이 존재합니다.
 
@@ -162,7 +163,6 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 <br/><br/>
 
 
-<img src = "https://user-images.githubusercontent.com/60677948/148338690-29c5b91f-b2b7-4c83-8f46-40943781a320.png" width="500" height="280">
 
 ## 향후 연구
 - 실제 서비스로 활용되기 위한 실시간성 고려
