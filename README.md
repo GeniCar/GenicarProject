@@ -1,8 +1,7 @@
 # GenicarProject
 
 프로젝트는 **쏘카x멋사 AI 엔지니어 육성 부트캠프 해커톤 과정(2021.12.20 ~ 2022.01.07)** 동안 진행되었습니다.
-<br/>
-
+<br/><br/>
 
 
 
@@ -23,6 +22,8 @@
 본 프로젝트를 통한 저희의 기여점은 다음과 같습니다.
 ##### `1. 기존에 존재하는 모델을 새로운 도메인, 문제를 해결하는데 활용 가능한 것을 실험을 통해 증명`
 ##### `2. 자율주행에 주로 활용되고 있는 기술을 보완할 수 있는 방법론을 제시`
+<br/><br/>
+
 
 
 ## 모델 시연 영상
@@ -40,8 +41,9 @@
 ### 3. 사고
 |![사고동영상](https://user-images.githubusercontent.com/60677948/148164863-992e0019-21c0-4cc9-b70d-8694fc3ffa82.gif)|![사고시연](https://user-images.githubusercontent.com/60677948/148163259-b3565a22-ba73-425f-bb94-17012a87df36.gif)|
 |:-:|:-:|
+<br/><br/>
 
-<br/>
+
 
 ## 데이터셋
 ### V 1.0.0
@@ -77,11 +79,15 @@
 |![가까워짐 (야간)](https://user-images.githubusercontent.com/29950822/147997799-59063bf1-887c-4ac9-a33b-8ca45fd4ac6c.gif)|
 |:-:|
 |사고 발생|
-<br/>
+<br/><br/>
+
+
 
 ## 모델 구조
 
-<br/>
+<br/><br/>
+
+
 
 ## 코드
 본 프로젝트의 코드는 [zhoubolei/TRN-pytorch](https://github.com/zhoubolei/TRN-pytorch)을 기반으로 하였으며 프로젝트의 목적에 맞추어 수정하였습니다.
@@ -105,7 +111,9 @@ python main.py --arch {model archtecture} --num_segments 8 --consensus_type TRNm
 ```bash
 python test_video.py --arch {model archtecture} --weights {weight path} --frame_folder {test data path}
 ```
-<br/>
+<br/><br/>
+
+
 
 ## 실험 결과
 
@@ -122,7 +130,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 처음 데이터 v 1.0.0을 활용하여 모델을 학습한 결과 loss 값이 감소하고 모델의 정확도 또한 100%에 가깝게 나타나는 것을 확인했습니다. 
 첫번째 실험 결과를 바탕으로 새로운 클래스를 추가하여 실험을 진행하였습니다.
-<br/><br/><br/>
+<br/><br/>
 
 ### 2차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 70개의 데이터)
 
@@ -131,7 +139,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/second_BNInception__noise_data196.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/second_resnet101__noise_data196.png" width="500" height="280">|
 
 새로운 클래스 '사고발생'을 추가하여 학습된 모델은 만족스러운 성과를 얻지 못하였고, 문제의 원인을 데이터의 부족으로 판단하여 데이터를 더 추가하여 다시 실험을 진행했습니다.
-<br/><br/><br/>
+<br/><br/>
 
 ### 3차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 130개의 데이터)
 
@@ -140,7 +148,7 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/third_model_BNInception_data384.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/third_resnet101_data384.png" width="500" height="280">|
 
 데이터를 추가하여도 여전히 성능 개선에 도움이 되지 않아 학습에 사용한 데이터를 다시 확인한 결과 데이터에 노이즈가 많이 발견되었고 노이즈가 있는 데이터를 모두 제거한 뒤 다시 실험을 진행했습니다.
-<br/><br/><br/>
+<br/><br/>
 
 ### 4차 실험 (3개 클래스 가까워짐 / 멀어짐 / 사고발생, 클래스별 60개의 데이터)
 
@@ -151,13 +159,20 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 데이터에서 노이즈를 제거한 뒤 전체적으로 모델의 정확도가 80% 이상의 성능을 보여주고 있습니다. 하지만 여전히 학습에 사용된 데이터가 부족하며 모델 학습에 Google Colab을 사용하여 충분한 배치 사이즈로 학습이 불가능하는 등의 개선 가능한 문제점들이 존재합니다.
 
 1 ~ 4차의 실험 종합적으로 판단하여 제안하는 아이디어에 대한 실용성이 충분하다는 결론을 내렸습니다.
-<br/><br/><br/>
+<br/><br/>
+
+
 
 ## 향후 연구
-- 실제 자율주행에 활용되기 위한 실시간성 고려
-- 새로운 클래스 (상황) 추가 실험
+- 실제 서비스로 활용되기 위한 실시간성 고려
+  - [ ] 추론 속도 향상
+  - [ ] 가벼운 모델
 
-<br/>
+- 더욱 다양한 상황 판단을 위한 새로운 클래스 추가
+  - [ ] 후방 및 측면 영상 활용 실험
+<br/><br/>
+
+
 
 ## 참고
 B. Zhou, A. Andonian, and A. Torralba. Temporal Relational Reasoning in Videos. European Conference on Computer Vision (ECCV), 2018.
