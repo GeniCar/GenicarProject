@@ -120,12 +120,12 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
 
 ### 실험 point
 
-#### 1차 실험
+#### 1. 1차 실험
   - Dataset
     
-    v 1.0.0의 주간 가까워짐/멀어짐 data
+    - v 1.0.0의 주간 가까워짐/멀어짐 data
     
-    총 개수 : 68
+    - 총 개수 : 68
 
 
 ### 1차 실험 (2개 클래스 가까워짐 / 멀어짐)
