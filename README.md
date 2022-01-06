@@ -87,6 +87,7 @@
 ## 모델 구조
 
 <br/><br/>
+![image](https://user-images.githubusercontent.com/26339800/148342244-2a7e16ae-fa10-4434-8eeb-6c2d6596ec57.png)
 
 
 
