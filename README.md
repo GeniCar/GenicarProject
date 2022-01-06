@@ -131,6 +131,12 @@ python test_video.py --arch {model archtecture} --weights {weight path} --frame_
   
     - ResNet18, Resnet50, Resnet101, BNInception
 
+  - 실험 반영점
+
+    - 기존 논문에서 학습한 pre-train model인 BNInception과 그 외의 pre-train CNN model 비교
+   
+    - IOT에 반영하기 위한 가벼운 model 
+
 
 ### 1차 실험 (2개 클래스 가까워짐 / 멀어짐)
 
