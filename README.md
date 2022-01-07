@@ -84,10 +84,14 @@
 
 
 ## 모델 구조
-
-<br/><br/>
 ![image](https://user-images.githubusercontent.com/26339800/148378718-76da2615-2c65-499b-825f-5c36edd5e6b8.png)
+- CNN 모델: BNIncention / ResNet101
+- TRN 모듈: 2개의 MLP (Multi-Layer Perceptron)
 
+전체적인 모델은 CNN 백본 모델을 활용해서 얻어낸 이미지의 feature를 2개의 MLP로 구성된 TRN을 통해 학습시킴으로 연속적인 이미지 프레임 사이의 관계를 추론하여 이해하는 구조입니다.
+
+TRN은 Plug-in 형태로써 어떠한 CNN 모델에도 쉽게 적용하여 사용이 가능하다는 장점이 있습니다.
+<br/><br/>
 
 
 ## 코드
@@ -126,21 +130,21 @@ batch_size = 8
 drop_out = 0.8
 ```
 
-### 1차 실험 (이진분류)
+### 1차 실험
   - 데이터셋
-    - v 1.0.0의 주간 가까워짐/멀어짐 
+    - v 1.0.0
     - 총 개수 : 68
   
   - 사용 모델
     - BNInception, ResNet18, Resnet50, Resnet101
 
-  - 실험 반영점
+  - 실험 중점
     - 기존 논문에서 학습한 pre-train 모델인 BNInception과 그 외의 pre-train CNN 모델 비교
     - IOT에 반영하기 위한 가벼운 모델 탐색
   
-  - 결과 및 개선 방향
-    - 4개의 모델에서 accuracy: 90% 이상 Loss : 0 에 수렴
-    - 정확도와 Loss의 결과가 좋게 나왔지만 학습 수렴 곡선이 일정하지  
+  - 결과
+    - 모든 모델 대상으로 정확도 90% 이상 달성
+    - 제한된 하드웨어 자원으로 모델을 학습하여 학습 그래프가 많이 불안정한 모습을 보임  
 
 |BNInception|ResNet18|
 |:-:|:-:|
@@ -150,68 +154,56 @@ drop_out = 0.8
 |:-:|:-:|
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_resnet50.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/first_binary_cls_resnet101.png" width="500" height="280">|
 
-### 2차 실험 (사고 클래스 추가)
+### 2차 실험
   - 데이터셋
-    - v 2.0.0의 주간 및 야간 가까워짐/멀어짐, 사고 (사고 데이터의 경우 내 차가 사고 난 영상 + 다른차가 사고난 영상)
+    - v 2.0.0
     - 총 개수 : 196
-    - 노이즈 데이터(인코딩 및 영상불량) 제거하지 않음
   
   - 사용 모델
     - BNInception, Resnet101
 
-  - 실험 반영점
-    - 사고 레이블 데이터 추가
-    - 사고 레이블을 추가하면서 Resnet18,50은 학습 결과가 좋지 않아 제외 
+  - 실험 중점
+    - 사고 레이블 데이터 추가로 인한 모델 학습 결과 확인
   
-  - 결과 및 개선 방향
-    - accuracy: 80% 이하 Loss : 0.5 이상  
-    - 이진분류보다 accuracy -10%, Loss +0.5
-    - Data가 부족하다고 생각, 각 레이블당 최소 100개 이상 필요  
+  - 결과
+    - 클래스 추가 및 학습 데이터 부족으로 모델 정확도 감소  
 
 |BNInception|ResNet101|
 |:-:|:-:|
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/second_BNInception__noise_data196.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/second_resnet101__noise_data196.png" width="500" height="280">|
 
-### 3차 실험 (클래스당 130개의 데이터)
+### 3차 실험
   - 데이터셋
-    - 2차 실험과 동일
-    - 총 개수 : 390
+    - v 2.0.0
+    - 총 개수: 390
   
   - 사용 모델
     - BNInception, Resnet101
 
   - 실험 반영점
-    - 2차 실험에 데이터 수 2배 증가 
-    - 모델과 학습 파라미터 경우 2차 실험과 동일
+    - 데이터 추가로 인한 모델 성능 변화 확인
   
-  - 결과 및 개선 방향
-    - 2차 실험보다 Resnet101 경우 accuracy가 10% 이상 감소  
+  - 결과
     - 두 모델의 성능이 2차 실험에 비해 성능 하락
-    - 데이터 확인 한 결과 데이터에 불량 데이터가 다수 발견 -> 불량 데이터 제거 
-    - 사고 데이터의 경우 (내 차가 사고 난 영상 + 다른차가 사고난 영상) 존재 -> 일단 다른차가 사고난 영상만 훈련에 사용 그 후 내 차가 사고 난 영상만 사용     
+    - 데이터에 노이즈가 발생한 불량 데이터 다수 발견
 
 |BNInception|ResNet101|
 |:-:|:-:|
 |<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/third_model_BNInception_data384.png" width="500" height="280">|<img src = "https://github.com/GeniCar/GenicarProject/blob/main/plots/third_resnet101_data384.png" width="500" height="280">|
 
-### 4차 실험 (노이즈 데이터 제외 및 사고 데이터 재정의)
+### 4차 실험
   - 데이터셋
-    - 3차 실험에서 노이즈 데이터 제외 및 사고 데이터 재정의
-    - 다른차가 사고난 영상만 훈련에 사용 데이터 개수: 180
-    - 내 차가 사고 난 영상: 226
+    - v2.0.0
+    - 총 개수: 226
   
   - 사용 모델
     - BNInception, Resnet101
 
   - 실험 반영점
-    - 노이즈 데이터 제외 및 사고 데이터 재정의 
-    - 모델과 학습 파라미터 경우 2차 실험과 동일
+    - 노이즈 데이터 제외로 모델 성능 변화 확인
 
-  - 결과 및 개선 방향 논의점
-    - 아래의 결과 그래프는 내 차가 사고 난 영상 결과/ 다른차가 사고난 영상 결과는 3차 실험과 비슷함 
-    - 두 모델 다 accuracy: 90% 내외 Loss: 0.4 내외
-    - 2,3차 실험 대비 성능개선
-    - 최종 실험 결과물
+  - 결과
+    - 2, 3차 실험 대비 성능 개선 확인
 
 |BNInception|ResNet101|
 |:-:|:-:|
@@ -219,10 +211,8 @@ drop_out = 0.8
 
 
 ### 개선 방향
-
-  - 4차 실험에서 노이즈가 없는 데이터를 추가하면 모델 성능 향상 기대
-  - 컴퓨팅 자원이 충분하다면 Batch_size 8 이상으로 늘려서 모델 수렴에 도움
-  - 노이즈 데이터를 자동으로 줄일 수 있는 방법 제시
+  - 학습에 필요한 충분한 컴퓨팅 자원으로 배치 사이즈를 키운다면 보다 안정적인 학습이 가능할 것으로 보임
+  - 노이즈가 없는 질 좋은 데이터를 모으기 위한 방법 연구
 
 <br/><br/>
 
